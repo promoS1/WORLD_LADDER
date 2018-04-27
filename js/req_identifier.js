@@ -69,5 +69,3 @@ var trait = function (req, res, query) {
 //---------------------------------------------------------------------------
 
 module.exports = trait;
-71,23         Bas
-
