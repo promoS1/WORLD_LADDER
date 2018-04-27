@@ -1,7 +1,7 @@
 //=========================================================================
 // Traitement de "req_inscrire"
-// Auteur : L'équipe de Starships
-// Version : 16/01/2018
+// Auteur : L'équipe de Word_Ladder
+// Version : 24/04/2018
 //=========================================================================
 
 "use strict";

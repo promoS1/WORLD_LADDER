@@ -1,7 +1,7 @@
 //=========================================================================
 // Traitement de "req_afficher_formulaire_inscription"
-// Auteur : L'équipe de Starships
-// Version : 16/01/2018
+// Auteur : L'équipe de Word_Labber
+// Version : 24/04/2018
 //=========================================================================
 "use strict";
 

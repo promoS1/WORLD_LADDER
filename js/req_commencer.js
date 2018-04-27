@@ -1,7 +1,7 @@
 //=========================================================================
 // Traitement de "req_commencer"
-// Auteur : L'équipe de Starships
-// Version : 16/01/2018
+// Auteur : L'équipe de Word_Ladder
+// Version : 24/04/2018
 //=========================================================================
 "use strict";
 
@@ -14,21 +14,6 @@ var trait = function (req, res, query) {
 	var page;
 	
 
-	//CLEAR DU JSON
-
-
-	var modele = fs.readFileSync("../json/modele.json",'utf-8');
-	var contenu_modele = JSON.parse(modele);
-
-	var json = fs.readFileSync("../json/etat_partie.json",'utf-8');
-	var contenu_json = JSON.parse(json);
-
-	contenu_json = contenu_modele;
-	
-	json = JSON.stringify(contenu_json);
-	fs.writeFileSync("../json/etat_partie.json",json,'utf-8');
-	
-	////////////////
 
 	// AFFICHAGE DE LA PAGE D'ACCUEIL
 

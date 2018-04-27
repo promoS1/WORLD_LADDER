@@ -1,7 +1,7 @@
 //=========================================================================
 // Serveur
-// Auteur : L'équipe de Starships
-// Version : 16/01/2018
+// Auteur : L'équipe de Word_Ladder
+// Version : 24/04/2018
 //=========================================================================
 
 "use strict";
@@ -22,10 +22,6 @@ var req_identifier = require("./req_identifier.js");
 
 var req_static = require("./req_static.js");
 var req_erreur = require("./req_erreur.js");
-var submit_case = require("./submit_case.js");
-var jouer_case = require("./jouer_case.js");
-var req_placement = require("./req_placement.js");
-var creer_partie = require("./creer_partie.js");
 
 
 //-------------------------------------------------------------------------
@@ -56,93 +52,8 @@ var traite_requete = function (req, res) {
 			case '/req_inscrire':
 				req_inscrire(req, res, query);
 				break;
-			case '/submit_case' :
-				submit_case(req,res,query);
-				break;
 			case '/req_identifier':
 				req_identifier(req, res, query);
-				break;
-			case '/req_placement':
-				req_placement(req, res, query);
-				break;
-			default:
-				req_static(req, res, query);
-				break;
-			case '/jouer_case':
-				jouer_case(req, res, query);
-				creer_partie(req,res,query);
-				break;
-			case '/req_gagner':
-				req_gagner(req, res, query,);
-				break;
-			case '/req_perdu':
-				req_perdu(req, res, query,);
-				break;
-			case '/img/bga_2.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/bga_2.png"));
-				res.end();
-				break;
-			case '/img/bg_place.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/bg_place.png"));
-				res.end();
-				break;
-			case '/img/bg_actif.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/bg_actif.png"));
-				res.end();
-				break;
-			case '/img/bg_regle.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/bg_regle.png"));
-				res.end();
-				break;
-			case '/img/bga.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/bga.png"));
-				res.end();
-				break;
-			case '/img/carree.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/carree.png"));
-				res.end();
-				break;
-			case '/img/carre.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/carre.png"));
-				res.end();
-				break;
-			case '/img/vert.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/vert.png"));
-				res.end();
-				break;
-			case '/img/rouge.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/rouge.png"));
-				res.end();
-				break;
-			case '/img/image_gagner.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/image_gagner.png"));
-				res.end();
-				break;
-			case '/img/image_perdu.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/image_perdu.png"));
-				res.end();
-				break;
-			case '/img/jaune.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/jaune.png"));
-				res.end();
-				break;
-			case '/img/gris.png':
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				res.write(fs.readFileSync("../img/gris.png"));
-				res.end();
-				
 		}
 	} catch (e) {
 		console.log('Erreur : ' + e.stack);
