@@ -8,14 +8,17 @@
 <body>
 
 <H1>WORDLABBER</H1> 
-<form action="display" method="GET">
+
 Pseudo : <input type="text" name="Pseudo" value=""><p>
 Mot de passe : <input type="Mot de Passe" name="code" value=""><p>
 
-<input type="submit" name="bouton" value="Connexion">
-<input type="submit" name="bouton" value="Inscription">
+<form action="/req_inscription" method="GET">
+    <button class="button" name="action" value="creer">Créer compte</button>
+	</form>
 
-</form>
+<form action="/req_connexion" method="GET">
+<button class="button" name="action" value="Se connecter">Se connecter</button>
+	</form>
 
 </body>
 </html>
