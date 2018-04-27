@@ -49,7 +49,7 @@ var trait = function (req, res, query) {
 	if(trouve === false){
 		// SI IDENTIFICATION INCORRECT 
 
-		page = fs.readFileSync('res_accueil.html','utf-8');
+		page = fs.readFileSync('modele_accueil.html','utf-8');
 
 		marqueurs = {};
 		marqueurs.erreur = "<div class='dark-matter1'>" + "Le compte est déjà connecté" +"</div>";
@@ -59,7 +59,7 @@ var trait = function (req, res, query) {
 	} else { 
 		// Si identification ok
 
-		page = fs.readFIleSync('modele_accueil.html', 'UFT-8');
+		page = fs.readFIleSync('salon.html', 'UFT-8');
 
 		marqueurs = {};
 		marqueurs.date = moment ().format('LLL');
