@@ -55,8 +55,8 @@ var traite_requete = function (req, res) {
 			case '/req_identifier':
 				req_identifier(req, res, query);
 				break;
-			case '/req_inscription':
-				req_inscription(req, res, query);
+			default:
+				req_static(req, res, pathname);
 				break;
 		}
 	} catch (e) {
