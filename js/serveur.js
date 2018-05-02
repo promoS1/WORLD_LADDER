@@ -54,6 +54,10 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_identifier':
 				req_identifier(req, res, query);
+				break;
+			case '/req_inscription':
+				req_inscription(req, res, query);
+				break;
 		}
 	} catch (e) {
 		console.log('Erreur : ' + e.stack);

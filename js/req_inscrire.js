@@ -45,7 +45,11 @@ var trait = function (req, res, query) {
 		nouveauMembre.password = query.password;
 		taille_psd = nouveauMembre.pseudo.length;
 		taille_mdp = nouveauMembre.password.length;
+<<<<<<< HEAD
 		listeMembres[listeMembres.length] = nouveauMembre;
+=======
+		listeMembres[listeMembres.lenght] = nouveauMembre;
+>>>>>>> d3635e5122b80d8519de5913946c48cfc3e921f2
 
 		contenu_fichier = JSON.stringify(listeMembres);
 
@@ -86,7 +90,6 @@ var trait = function (req, res, query) {
 		marqueurs.password = query.password;
 		page = page.supplant(marqueurs);
 	}
-
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write(page);
 	res.end();
