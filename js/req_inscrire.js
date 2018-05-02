@@ -30,7 +30,7 @@ var trait = function (req, res, query) {
 
 	trouve = false;
 	i = 0;
-	while(i<listeMembres.lenght && trouve === false) {
+	while(i<listeMembres.length && trouve === false) {
 		if(listeMembres[i].pseudo === query.pseudo) {
 			trouve = true;
 		}
@@ -43,8 +43,8 @@ var trait = function (req, res, query) {
 		nouveauMembre = {};
 		nouveauMembre.pseudo = query.pseudo;
 		nouveauMembre.password = query.password;
-		taille_psd = nouveauMembre.pseudo.lenght;
-		taille_mdp = nouveauMembre.password.lenght;
+		taille_psd = nouveauMembre.pseudo.length;
+		taille_mdp = nouveauMembre.password.length;
 		listeMembres[listeMembres.lenght] = nouveauMembre;
 
 		contenu_fichier = JSON.stringify(listeMembres);
@@ -86,7 +86,6 @@ var trait = function (req, res, query) {
 		marqueurs.password = query.password;
 		page = page.supplant(marqueurs);
 	}
-
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write(page);
 	res.end();
