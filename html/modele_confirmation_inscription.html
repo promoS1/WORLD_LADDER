@@ -7,13 +7,15 @@
 
 Votre compte a bien été créé.
 <p/>
-Notez bien votre compte : <em>{compte}</em> et votre mdp : <em>{mdp}</em>
+Notez bien votre compte : <em>"{compte}</em> et votre mdp : <em>{mdp}</em>
 </p>
 
 Cliquez sur le lien ci-dessous pour revenir à la page d'accueil afin de vous identifier.
 </p>
 
-<a href="/">Revenir à la page d'accueil</a>
+<form action="/req_commencer" method="GET">
+<button name="action" value="creer">Page d'acceuil</button>
+</form>
 
 </html>
 
