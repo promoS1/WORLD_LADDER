@@ -28,11 +28,12 @@ var trait = function (req, res, query) {
 
 	// ON VERIFIE QUE LE COMPTE N'EXISTE PAS DEJA
 
-	trouve = false;
 	i = 0;
+	trouve = true;
 	while(i<listeMembres.length && trouve === false) {
 		if(listeMembres[i].pseudo === query.pseudo) {
-			trouve = true;
+			trouve = false;
+			console.log("1")
 		}
 		i++;
 	}
@@ -44,20 +45,15 @@ var trait = function (req, res, query) {
 		nouveauMembre.pseudo = query.pseudo;
 		nouveauMembre.password = query.password;
 		listeMembres[listeMembres.length] = nouveauMembre;
-
+		console.log("deffe")
 		contenu_fichier = JSON.stringify(listeMembres);
 
 		fs.writeFileSync("../json/membres.json", contenu_fichier, 'utf-8');
-	}
-
-
-	// ON RENVOIT UNE PAGE HTML 
-
-	if(trouve === true) {
+	} else if (trouve === true) {
 		// SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR
 
 		page = fs.readFileSync('../html/modele_formulaire_inscription.html', 'utf-8');
-
+console.log("3")
 		marqueurs = {};
 		marqueurs.erreur = "ERREUR : ce compte existe déjà";
 		marqueurs.pseudo = query.pseudo;
