@@ -37,11 +37,7 @@ var trait = function (req, res, query) {
 			}
 		}
 		i++;
-	}
-
-	// ON RENVOIT UNE PAGE HTML 
-
-	if(trouve === false) {
+	}  if(trouve === false) {
 		// SI IDENTIFICATION INCORRECTE, ON REAFFICHE PAGE ACCUEIL AVEC ERREUR
 
 		page = fs.readFileSync('../html/modele_accueil.html', 'utf-8');
@@ -51,7 +47,7 @@ var trait = function (req, res, query) {
 		marqueurs.pseudo = query.pseudo;
 		page = page.supplant(marqueurs);
 
-	} else {
+	} else if (trouve === true) {
 		// SI IDENTIFICATION OK, ON ENVOIE PAGE ACCUEIL MEMBRE
 
 		page = fs.readFileSync('../html/salon.html', 'UTF-8');
