@@ -1,19 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 
 <head>
-<meta charset="UTF-8" />
-<<<<<<< HEAD
-<title>WORLDLADDER</title>
-
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<link rel="png" href="icon.png" />
+<title>WorldLadder</title>
+<meta http-equiv="refresh" content="3"; url=/home/eleve/projet/WORLD_LADDER/html/salon.html>
 </head>
 
-
-</html>
-=======
-<title>WORDLABER</title> 
-</head>
 <body>
 
-<H1>salon</H1> 
->>>>>>> a55d5326730a849e1cbf47e05c84d1e1b78c1a23
+
+	<h1><img src="icon.png"> Salon</h1>
+		<div class="dark-matter">
+
+		<h3>	Bonjour, {pseudo} ! 
+			<span> Nous sommes le {date}.</span></h3>
+
+
+	<form action ="req_retour_membre" method="GET">
+		<input type="hidden" name="pseudo" value="{pseudo}">
+
+		<button class="button1" name="action" value="disconnect">Retour à l'accueil</button>
+																				</form>
+</div>
+</p>
+																				<div class="dark-matter">
+																					<h3>Liste des membres connectés
+																						<span>Cliquez sur un joueur pour lancer une partie </span> </h3>
+																																										{joueurs}													
+																				</div>
+																				<div class="dark-matter">
+
+	<p>
+	Ici, vous pouvez défier quiconque est simultanément connecté en cliquant sur son pseudo. Le joueur qui est défié prend automatiquement la main en début de partie, par politesse. Bonne partie, que le meilleur gagne !
+	</p>
+
+</div>
+</body>
+</html>
+
