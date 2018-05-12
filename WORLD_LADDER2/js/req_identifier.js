@@ -24,7 +24,7 @@ var trait = function (req, res, query) {
 
     trouve = false;
     i = 0;
-    while(i<listeMembres.length && trouve === false) {
+    while(i < listeMembres.length && trouve === false) {
         if(listeMembres[i].compte === query.compte) {
             if(listeMembres[i].mdp === query.mdp) {
                 trouve = true;
@@ -38,17 +38,17 @@ var trait = function (req, res, query) {
     if(trouve === false) {
         // SI IDENTIFICATION INCORRECTE, ON REAFFICHE PAGE ACCUEIL AVEC ERREUR
 
-        page = fs.readFileSync('./html/res_modele_accueil.html', 'utf-8');
+        page = fs.readFileSync('./html/res_modele_accueil2.html', 'utf-8');
 
         marqueurs = {};
         marqueurs.erreur = "ERREUR : compte ou mot de passe incorrect";
         marqueurs.compte = query.compte;
         page = page.supplant(marqueurs);
 
-    } else {
+    } else if (trouve === true) {
         // SI IDENTIFICATION OK, ON ENVOIE PAGE ACCUEIL MEMBRE
 
-        page = fs.readFileSync('./html/salon.html', 'UTF-8');
+        page = fs.readFileSync('./html/res_salon.html', 'UTF-8');
 
         marqueurs = {};
         marqueurs.compte = query.compte;
