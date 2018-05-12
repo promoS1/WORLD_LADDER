@@ -54,45 +54,45 @@ var traite_requete = function (req, res) {
 	try {
 		switch (pathname) {
 			case '/':
-			case './js/req_commencer':
+			case '/req_commencer':
 				req_commencer(req, res, query);
 				break;
-			case './js/req_confirmation_inscription':
+			case '/req_confirmation_inscription':
 				req_confirmation_inscription(req, res, query);
 				break;
-			case './js/req_defie':
+			case '/req_defie':
 				req_defie(req, res, query);
 				break;
-			case './js/req_dice':
+			case '/req_dice':
 				req_dice(req, res, query);
 				break;
-			case './js/req_gagner':
+			case '/req_gagner':
 				req_gagner(req, res, query);
 				break;
-			case './js/req_identifier':
+			case '/req_identifier':
 				req_identifier(req, res, query);
 				break;
-			case './js/req_modele_confirmation_inscription':
+			case '/req_modele_confirmation_inscription':
 				req_modele_confirmation_inscription(req, res, query);
 				break;
-			case './js/req_modele_formulaire_inscription':
+			case '/req_modele_formulaire_inscription':
 				req_modele_formulaire_inscription(req, res, query);
 				break;
-			case './js/req_non':
+			case '/req_non':
 				req_non(req, res, query);
 				break;
-			case './js/oui':
+			case '/oui':
 				req_oui(req, res, query);
 				break;
 
 
-			case './js/req_oui2':
+			case '/req_oui2':
 				req_oui2(req, res, query);
 				break;
-			case './js/req_perdu':
+			case '/req_perdu':
 				req_perdu(req, res, query);
 				break;
-			case './js/req_reponse_defie':
+			case '/req_reponse_defie':
 				req_reponse_defie(req, res, query);
 				break;
 			default:
