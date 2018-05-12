@@ -15,7 +15,7 @@ var trait = function (req, res, query) {
 
     // AFFICHAGE DE LA modele_formulaire_inscription//
 
-    page = fs.readFileSync('./html/res_modele_formulaire_accueil.html', 'utf-8');
+    page = fs.readFileSync('./html/res_modele_formulaire_inscription.html', 'utf-8');
 
     marqueurs = {};
     marqueurs.erreur = "";
