@@ -56,10 +56,11 @@ var trait = function (req, res, query) {
     if(trouve === true) {
         // SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR
 
-        page = fs.readFileSync('./html/res_modele_formulaire_inscription.html', 'utf-8');
+        page = fs.readFileSync('./html/res_modele_formulaire_inscription2.html', 'utf-8');
 
         marqueurs = {};
         marqueurs.erreur = "ERREUR : ce compte existe déjà";
+
         marqueurs.compte = query.compte;
         page = page.supplant(marqueurs);
 

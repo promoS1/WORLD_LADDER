@@ -1,8 +1,8 @@
-//=========================================================================//
+//=========================================================================
 // Traitement de "req_afficher_formulaire_inscription"
 // Auteur : P. Thiré
 // Version : 09/10/2015
-//=========================================================================//
+//=========================================================================
 "use strict";
 
 var fs = require("fs");
@@ -13,7 +13,7 @@ var trait = function (req, res, query) {
     var marqueurs;
     var page;
 
-    // AFFICHAGE DE LA modele_formulaire_inscription//
+    // AFFICHAGE DE LA modele_formulaire_inscription
 
     page = fs.readFileSync('./html/res_modele_formulaire_inscription.html', 'utf-8');
 
@@ -27,7 +27,6 @@ var trait = function (req, res, query) {
     res.end();
 };
 
-//--------------------------------------------------------------------------//
-
+//--------------------------------------------------------------------------
 
 module.exports = trait;
