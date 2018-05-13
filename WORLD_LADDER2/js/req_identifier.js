@@ -86,7 +86,6 @@ var trait = function (req, res, query) {
 			membre_co_salon.compte = query.compte;
 			membre_co_salon.etat = "connecté";
 			membre_co_salon.libre = "oui";
-			liste_temps_reel = [];
 			liste_temps_reel.push(membre_co_salon);
 
 			contenu_fichier2 = JSON.stringify(liste_temps_reel);
