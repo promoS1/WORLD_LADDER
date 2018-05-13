@@ -15,6 +15,7 @@ var trait = function (req, res, query) {
     var i;
     var trouve;
 
+
     // ON LIT LES COMPTES EXISTANTS
 
     contenu_fichier = fs.readFileSync("./json/membres.json", 'utf-8');    
@@ -50,15 +51,21 @@ var trait = function (req, res, query) {
 
         page = fs.readFileSync('./html/res_salon.html', 'UTF-8');
 
-        marqueurs = {};
-        marqueurs.compte = query.compte;
-        page = page.supplant(marqueurs);
+
+
+
+
+
+
     }
+    
+
+
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(page);
     res.end();
-};
+}
 
 //---------------------------------------------------------------------------
 
