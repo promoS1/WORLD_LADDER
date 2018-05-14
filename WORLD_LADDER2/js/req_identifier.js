@@ -107,8 +107,7 @@ var trait = function (req, res, query) {
 		marqueurs = {};
         marqueurs.compte = query.compte;
         marqueurs.mdp = query.mdp;
-		marqueurs.joueurs = liste
-
+		marqueurs.joueurs = liste;
         page = page.supplant(marqueurs);
     
     res.writeHead(200, {'Content-Type': 'text/html'});
