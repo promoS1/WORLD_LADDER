@@ -2,29 +2,37 @@
 
 <html>
 	<head>
-Rajouter le refresh de la page quand le serveur sera fonctionnel 
-		<meta charset = 'UTF-8'>  
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta http-equiv="refresh" content="3; url="/req_check?compte={compte}">
+</head>
 		<title>page d'attente</title>
 	</head>
 
 	<body background = "./html/img_bg2.png">
+
 		<fliedset>
-		<br><br><br><br><br>
-		<center><h1>En attente de la réponse de votre adversaire . . . <br> {nom_adversaire} réfléchis . . .</h1></center>
+
 		
+		<center><h1>En attente de la réponse de votre adversaire . . . <br> <em>{adversaire}</em> réfléchis . . .</h1></center>
 		
-			<hr><br>
-	
-		 <center><strong><h2><u>Jeu du Serpent :</h2></strong> </center><br></u>
+		<hr>
+		<form action = "/req_check?compte={compte}" method = "get">
+		<input type = "hidden" name = "compte" value = "{compte}">
+		<input type = "submit" name ="action" value = "Retour au Salon">
+		</form>
+
+ 		<center><strong><h2><u>Jeu du Serpent :</h2></strong> </center><br></u>
+
 		<strong>Règle</strong> : Nombre de joueurs : 2 joueurs.<br><br> 
+
 		<u><strong>But du jeu :</strong></u> <blockquote>Arriver le premier sur la case 100. Déroulement : Pour commencer le plus 				jeune
 			des joueurs lance le dé et avance son pion du nombre indiqué sur le dé. <br> 
 			Le pion arrive sur le bas d'une échelle, on monte dans la case où il y a le haut de l'échelle.<br>
 			Le pion arrive sur le bas d’une échelle, on monte dans la case où il y a le haut de 			l’échelle.<br>
 			Le pion arrive sur la queue du serpent, on descend dans la case où il y a la tête du 				serpent.<br>
 			Le pion arrive sur une case normale, on ne bouge pas.<br>
-			Le pion arrive sur une case déjà occupée, on retourne au départ.<br></blockquote>
-			<img src = "./html/attend.jpg">
+			Le pion arrive sur une case déjà occupée, on retourne au départ.</blockquote>
+			<center><img src = "./html/attend.jpg"> </center>
 	</fieldset>
 
 

@@ -26,14 +26,16 @@ var req_oui = require('./js/req_oui.js');
 var req_oui2 = require('./js/req_oui2.js');
 var req_perdu = require('./js/req_perdu.js');
 var req_reponse_defie = require('./js/req_reponse_defie.js');
-var req_sauter_pion = require('./js/req_sauter.pion.js');
+var req_sauter_pion = require('./js/req_sauter_pion.js');
 var req_statique = require('./js/req_statique.js');
 var req_erreur = require('./js/req_erreur.js');
 var req_lancer = require('./js/req_lancer.js');
-var req_deplacer_pion = require('/js/req_depacer_pion.js');
-var req_retour = require('/js/req_retour.js');
-var req_attente_tour = require('/js/req_attente_tour.js');
-var req_attendre_defie = require('/js/req_attendre_defie.js');
+var req_deplacer_pion = require('./js/req_deplacer_pion.js');
+var req_retour = require('./js/req_retour.js');
+var req_attente_tour = require('./js/req_attente_tour.js');
+var req_check = require('./js/req_check.js');
+var req_reponse_joueur = require('./js/req_reponse_joueur.js');
+
 
 
 //-------------------------------------------------------------------------
@@ -95,6 +97,31 @@ var traite_requete = function (req, res) {
 			case '/req_reponse_defie':
 				req_reponse_defie(req, res, query);
 				break;
+			case '/req_sauter_pion' :
+				req_sauter_pion(req, res, query);
+				break;
+			case '/req_lancer':
+				req_lancer(req, res, query);
+				break;
+			case '/req_deplacer_pion':
+				req_deplacer_pion(req, res, query);
+				break;
+
+			case '/req_retour':
+				req_retour(req, res, query);
+				break;
+			case '/req_attente_tour':
+				req_attente_tour(req, res, query);
+				break;
+			case '/req_check':
+				req_check(req, res, query);
+				break;
+			case '/req_reponse_joueur':
+				req_reponse_joueur(req, res, query);
+				break;		
+
+
+
 			default:
 				req_statique(req, res, pathname);
 				break;

@@ -8,24 +8,38 @@ require('remedial');
 var trait = function(req, res, query) {
 
 	var contenu_fichier;
-	var membres_connecte_salon;
+	var liste_membres;
+	var i;
+	var test = false;
+	var page;
+	var marqueurs = {};
 
-//Liste de membres connectés au Salon de joueurs
+//LISTE DE MEMBRES CONNECTÉ AU SALON
 
 	contenu_fichier = fs.readFileSync("./json/salon.json", "UTF-8")
-	membres_connecte_salon = JSON.parse(contenu_fichier);
+	liste_membres = JSON.parse(contenu_fichier);
+
+	for (i = 0; i < membre_listes.length; i++) {
+		if (liste_membre[i].compte == query.compte) {
+			marqueurs.mdp = liste_membres[i].mdp
+			if (liste_membre[i].etat !== "connecté") {
+				test = true;
+			}	
+		}
+	}
+
+
+
+	if (test == false) {
+		page = fs.readFileSync('./html/res_salon.html','utf-8');
+	} else if (test == true) {
+		page = fs.readFileSync("./html/res_joueur_actif.html", "utf-8");
+	}
+
+
 
 	
-
-
-
-
-	page = fs.readFileSync('./html/res_salon.html','utf-8');
-
-
-	marqueurs = {};
 	marqueurs.pseudo = query.compte;
-	marqueurs.mdp = query.mdp;
 	marqueurs.joueurs = liste;
 	page = page.supplant(marqueurs);
 

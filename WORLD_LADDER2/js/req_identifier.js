@@ -49,9 +49,9 @@ var trait = function (req, res, query) {
         page = page.supplant(marqueurs);
 
     } else if (trouve === true) {
-        // SI IDENTIFICATION OK, ON ENVOIE PAGE ACCUEIL MEMBRE
+        // SI IDENTIFICATION OK, ON ENVOIE PAGE MENU
 
-		page = fs.readFileSync('./html/res_salon.html', 'UTF-8');
+		page = fs.readFileSync('./html/res_menu.html', 'UTF-8');
 		
 
 //==============================================================================================//
@@ -92,12 +92,12 @@ var trait = function (req, res, query) {
 			fs.writeFileSync("./json/salon.json", contenu_fichier2, 'utf-8');
 		}
 
-		page = fs.readFileSync('./html/res_salon.html', 'UTF-8');
+		page = fs.readFileSync('./html/res_menu.html', 'UTF-8');
 
 		liste= "";
 		for (i = 0; i < liste_temps_reel.length; i++) {
 			if (liste_temps_reel[i].compte !== query.compte && liste_temps_reel[i].etat === "connecté") {
-				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_temps_reel[i].compte +"'><button class='button1' name='action' value=''>" + liste_temps_reel[i].compte + "</button></form>";
+				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name='mdp' value='"+ query.mdp +"'><input type = 'hidden' name ='adversaire' value='"+ liste_temps_reel[i].compte +"'><button class='button1' name='action' value=''>" + liste_temps_reel[i].compte + "</button></form>";
 			}
 					
 		}
@@ -105,8 +105,8 @@ var trait = function (req, res, query) {
 	}
 		marqueurs = {};
         marqueurs.compte = query.compte;
+		marqueurs.mdp = query.mdp
 		marqueurs.adversaire = query.adversaire;
-        marqueurs.mdp = query.mdp;
 		marqueurs.joueurs = liste;
         page = page.supplant(marqueurs);
     

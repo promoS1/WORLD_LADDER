@@ -4,32 +4,35 @@
 	<head>
 		<title>Salon</title>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-		<meta http-equiv="refresh" content="3";
 	</head>
 
-	<body background = "./html/img_bg.png">
+	<body background = "./html/img_bg2.png">
 
-		<center><h1>WORLDLADDER</h1></center>
+		<center><h1><strong><u>WORLDLADDER</u></h1></strong>
+		<br>
+		<h2>MENU</h2></center><br><br><br>
 	
-		<h2>Bienvenue <label><em>{compte}</em></label>, vous êtes dans le salon réservé à nos membres !
-		</h2><br><br>
+		<h2>Bienvenue <label><em>{compte}</em></label>		</h2>
 
 	<fieldset>
-		<center><strong><u><h2>Membres connectés :</h2></center></trong></u>
-		C'est ici que tout commence ! N'hésite pas à cliquer sur le pseudo d'un joueur pour le lancer un défi ! <br> Que le meilleur gagne ! <br> <br>
-
-		<form action="/req_commencer" method="GET">
-		<button name="action" value="retour_accueil">Retour à l'accueil</button>
-		<input type = "hidden" name = "compte" value = "{compte}">
-		<input type = "hidden" name ="mdp" value = "{mdp}">	
+		<h4>Choisissez l'option qui vous intéresse :</h4>
+		
+	<form action="/req_check" method="GET">
+		<button name="compte" value="{compte}">Rejoindre le salon de joueur</button>	<br><br>
 	</form>
-		<hr><br>
 
-		{joueurs}	
+	<form action="/" method="GET">
+		<button name="compte" value="{compte}">Gerer votre compte</button>	<br><br>
+	</form>
 
-	</fieldset> <br><br>
+	<form action="/" method="GET">
+		<button name="compte" value="{compte}">Voir vos statistiques</button>	<br><br>
+	</form>
 
-	<fliedset>
+	<form action="/" method="GET">
+		<button name="retour" value="{compte}">Retour à l'écran d'acceuil</button>	<br><br>
+	</form>
+		<hr>
 		<p><strong><h3><u>Jeu du Serpent :</h3></strong> </u>
 		Règle : Nombre de joueurs : 2 joueurs.<br><br>
 		<u>But du jeu :</u> <blockquote>Arrive le premier sur la case 100 pour gagner !<br> 			<u>Déroulement :</u> Par courtoisie, le joueur qui est défié prend la main. Il lance les dés et avance son pion du nombre indiqué par celui-ci. <br> 
