@@ -84,8 +84,6 @@ var traite_requete = function (req, res) {
 			case '/oui':
 				req_oui(req, res, query);
 				break;
-
-
 			case '/req_oui2':
 				req_oui2(req, res, query);
 				break;

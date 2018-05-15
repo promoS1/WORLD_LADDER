@@ -97,15 +97,15 @@ var trait = function (req, res, query) {
 		liste= "";
 		for (i = 0; i < liste_temps_reel.length; i++) {
 			if (liste_temps_reel[i].compte !== query.compte && liste_temps_reel[i].etat === "connecté") {
-				liste += "<form action='./js/req_reponse_defie.js' method='GET'><input type ='hidden' name='compte' value='"+ query.compte +"'><input type ='hidden' name ='libre' value='"+ liste_temps_reel[i].compte +"'><button class='button1' name='action' value=''>" + liste_temps_reel[i].compte + "</button></form>";
+				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_temps_reel[i].compte +"'><button class='button1' name='action' value=''>" + liste_temps_reel[i].compte + "</button></form>";
 			}
 					
-
 		}
 	
 	}
 		marqueurs = {};
         marqueurs.compte = query.compte;
+		marqueurs.adversaire = query.adversaire;
         marqueurs.mdp = query.mdp;
 		marqueurs.joueurs = liste;
         page = page.supplant(marqueurs);
