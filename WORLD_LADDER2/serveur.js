@@ -17,7 +17,6 @@ var querystring = require("querystring");
 var req_commencer = require('./js/req_commencer.js');
 var req_confirmation_inscription = require("./js/req_confirmation_inscription.js");
 var req_defie = require('./js/req_defie.js');
-var req_dice = require('./js/req_dice.js');
 var req_gagner = require('./js/req_gagner.js');
 var req_identifier = require('./js/req_identifier.js');
 var req_modele_confirmation_inscription = require('./js/req_modele_confirmation_inscription.js');
@@ -27,11 +26,14 @@ var req_oui = require('./js/req_oui.js');
 var req_oui2 = require('./js/req_oui2.js');
 var req_perdu = require('./js/req_perdu.js');
 var req_reponse_defie = require('./js/req_reponse_defie.js');
-
-
-
+var req_sauter_pion = require('./js/req_sauter.pion.js');
 var req_statique = require('./js/req_statique.js');
 var req_erreur = require('./js/req_erreur.js');
+var req_lancer = require('./js/req_lancer.js');
+var req_deplacer_pion = require('/js/req_depacer_pion.js');
+var req_retour = require('/js/req_retour.js');
+var req_attente_tour = require('/js/req_attente_tour.js');
+var req_attendre_defie = require('/js/req_attendre_defie.js');
 
 
 //-------------------------------------------------------------------------
