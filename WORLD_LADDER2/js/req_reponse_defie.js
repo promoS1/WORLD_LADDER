@@ -13,7 +13,7 @@ var trait = function (req, res, query) {
 	var adversaire;
 	var liste;
 	var i;
-	var marqueurs = {};
+	var marqueurs;
 	var page;
 
 
@@ -48,17 +48,13 @@ var trait = function (req, res, query) {
 
 	if (adversaire_trouve === false) {
 		page = fs.readFileSync('./html/res_salon.html','utf-8');
-		marqueurs.compte = query.compte;
-		marqueurs.adversaire = adversaire;
-		marqueurs.joueurs = liste;
-		page = page.supplant(marqueurs);
 	} else if (adversaire_trouve === true) {
 		page = fs.readFileSync("./html/res_reponse_defie.html", "utf-8");
 	}
 
 
 
-
+	marqueurs = {};
 	marqueurs.compte = query.compte;
 	marqueurs.adversaire = adversaire;
 	marqueurs.joueurs = liste;

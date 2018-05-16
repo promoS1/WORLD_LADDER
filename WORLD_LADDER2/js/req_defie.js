@@ -23,10 +23,7 @@ var trait = function (req, res, query) {
 	for ( i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte === query.compte) {
 			liste_membres[i].etat = "attente";
-			liste_membres[i].adversaire = query.adversaire;
-			marqueurs.adversaire = query.adversaire;	
-			marqueurs.compte = query.compte;	
-			marqueurs.mdp = liste_membres[i].mdp;
+			liste_membres[i].adversaire = query.adversaire;	
 		} else if ( liste_membres[i].compte === query.adversaire ) {
 			liste_membres[i].etat = "attente";
 			liste_membres[i].adversaire = query.compte;			
@@ -40,6 +37,9 @@ var trait = function (req, res, query) {
 	fs.writeFileSync("./json/salon.json", contenu_fichier, "utf-8");
 
 	page = fs.readFileSync("./html/res_attendre_reponse.html", "utf-8");
+
+	marqueurs.adversaire = query.adversaire;	
+	marqueurs.compte = query.compte;	
 	page = page.supplant(marqueurs);
    
     res.writeHead(200, {'Content-Type': 'text/html'});
