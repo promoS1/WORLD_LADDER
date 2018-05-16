@@ -35,7 +35,8 @@ var req_retour = require('./js/req_retour.js');
 var req_attente_tour = require('./js/req_attente_tour.js');
 var req_check = require('./js/req_check.js');
 var req_reponse_joueur = require('./js/req_reponse_joueur.js');
-
+var req_page_deplacement = require('./js/req_page_deplacement.js');
+var req_passif = require('./js/req_passif.js');
 
 
 //-------------------------------------------------------------------------
@@ -118,8 +119,13 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_reponse_joueur':
 				req_reponse_joueur(req, res, query);
-				break;		
-
+				break;	
+			case '/req_page_deplacement':
+				req_page_deplacement(req, res, query);	
+				break;
+			case '/req_passif':
+				req_passif(req, res, query);
+				break;
 
 
 			default:
