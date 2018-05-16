@@ -19,9 +19,9 @@ var trait = function (req, res, query) {
 	// MODIFICATION DU JSON "SALON.JSON" REPASSER EN ETAT : "CONNECTÉ"
 	
 	for (i = 0; i < liste_membres.length; i++) {
-		if ( liste_membres[i].compte == query.compte) {
+		if ( liste_membres[i].compte === query.compte) {
 			liste_membres[i].etat = "connecté";
-		} else if ( liste_membres[i].compte == query.adversaire) {
+		} else if ( liste_membres[i].compte === query.adversaire) {
 			liste_membres[i].etat = "connecté"
 		}
 	}
