@@ -38,7 +38,7 @@ var trait = function (req, res, query) {
 			membre_co_salon = {};
 			membre_co_salon.compte = query.compte;
 			membre_co_salon.etat = "connecté";
-			membre_co_salon.libre = "oui";
+			membre_co_salon.adversaire = "non";
 			liste_membres.push(membre_co_salon);
 
 			contenu_fichier = JSON.stringify(liste_membres);
@@ -50,7 +50,7 @@ var trait = function (req, res, query) {
 		liste= "";
 		for (i = 0; i < liste_membres.length; i++) {
 			if (liste_membres[i].compte !== query.compte && liste_membres[i].etat === "connecté") {
-				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_membres[i].compte +"'><button class='button1' name='action' value=''>" + liste_membres[i].compte + "</button></form>";
+				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_membres[i].compte +"'><input type='submit' name='adversaire' value='"+ liste_membres[i].compte +"</form>";
 			}
 					
 		}

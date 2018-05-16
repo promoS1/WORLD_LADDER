@@ -26,6 +26,7 @@ var trait = function (req, res, query) {
 			compte = liste_membres[i].compte;
 			if (liste_membres[i].etat == "attente") {
 				adversaire_trouve = true;
+				adversaire = liste_membres[i].adversaire;
 			}
 		}
 	}
@@ -45,7 +46,7 @@ var trait = function (req, res, query) {
 			}		
 		}
 
-	// RECHERCHE DU NOM DE L'ADVERSAIRE
+/*	// RECHERCHE DU NOM DE L'ADVERSAIRE
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte !== query.compte) {
 			if (liste_membres[i].etat == "attente") {
@@ -53,7 +54,8 @@ var trait = function (req, res, query) {
 			}
 		}
 	}
-	
+*/	
+
 	marqueurs.compte = query.compte;
 	marqueurs.adversaire = adversaire;
 	marqueurs.joueurs = liste;

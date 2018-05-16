@@ -1,1 +1,1 @@
-[{"compte":"tt","etat":"attente","libre":"oui"},{"compte":"sam","etat":"attente","libre":"oui"},{"compte":"test1","etat":"attente","libre":"oui"},{"compte":"tanguy29","etat":"attente","libre":"oui"},{"compte":"boubou","etat":"attente","libre":"oui"},{"compte":"t","etat":"attente","libre":"oui"}]
+[{"compte":"sam","etat":"connecté","libre":"sam","adversaire":"t"},{"compte":"boubou","etat":"attente","libre":"boubou","adversaire":"sam"},{"compte":"t","etat":"attente","libre":"oui","adversaire":"sam"}]
