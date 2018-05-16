@@ -10,7 +10,7 @@ var trait = function (req, res, query) {
 
 	// AFFICHAGE DE déé qui tourne 
 
-	page = fs.readFileSync('./html/res_gagner.html', 'utf-8');
+	page = fs.readFileSync('./html/res_page_deplacement.html', 'utf-8');
 
 
 
