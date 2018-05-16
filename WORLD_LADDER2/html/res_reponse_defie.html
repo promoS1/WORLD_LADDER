@@ -7,17 +7,21 @@
 	</head>
 
 
-	<body background = "./html/img_bg2.png">
+	<body background = ".img_bg2.png">
 		<center><strong><h1>{compte} souhaite vous défier !</h1>
 			<h3>Souhaitez-vous relever le challenge ?</h3> <br> 
 			</strong>
 
 		<form action = "/req_oui">
 			<input type = "submit" name = "commencer" value = "Commencer la partie !">
-		</form><br>
+			<input type = "hidden" name = "compte" value = "{compte}">
+			<input type = "hidden" name = "adversaire" value = "{adversaire}">
+		</form><br><br>
 		
 		<form action = "/req_non">
 			<input type = "submit" name = "non" value = "Non, retour au Salon">
+			<input type = "hidden" name = "compte" value = "{compte}">
+			<input type = "hidden" name = "adversaire" value = "{adversaire}">
 		</form>
 
 			<br><br><br>
