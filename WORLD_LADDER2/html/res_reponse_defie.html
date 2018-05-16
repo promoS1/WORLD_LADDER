@@ -12,13 +12,13 @@
 			<h3>Souhaitez-vous relever le challenge ?</h3> <br> 
 			</strong>
 
-		<form action = "/req_oui">
+		<form action = "./req_oui" method = "get">
 			<input type = "submit" name = "commencer" value = "Commencer la partie !">
 			<input type = "hidden" name = "compte" value = "{compte}">
 			<input type = "hidden" name = "adversaire" value = "{adversaire}">
 		</form><br><br>
 		
-		<form action = "/req_non">
+		<form action = "./req_non" method = "get">
 			<input type = "submit" name = "non" value = "Non, retour au Salon">
 			<input type = "hidden" name = "compte" value = "{compte}">
 			<input type = "hidden" name = "adversaire" value = "{adversaire}">
