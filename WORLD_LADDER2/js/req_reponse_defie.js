@@ -7,6 +7,7 @@ var trait = function (req, res, query) {
 	
 	var contenu_fichier;
 	var liste_membres;
+	var compte;
 	var i;
 	var adversaire_trouve = false;
 	var marqueurs;
@@ -20,6 +21,7 @@ var trait = function (req, res, query) {
 
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte == query.compte) {
+			compte = liste_membres[i].compte;
 			if (liste_membres[i].etat == "attente") {
 				adversaire_trouve = true;
 			}
@@ -28,16 +30,16 @@ var trait = function (req, res, query) {
 
 	// REDIRECTION VERS PAGE HTML SI JOUEUR DÉFIÉ
 
-	if (adversaire_trouve == true) {
+	if (adversaire_trouve === false) {
 		page = fs.readFileSync('./html/res_salon.html','utf-8');
-	} else if (adversaire_trouve == true) {
+	} else if (adversaire_trouve === true) {
 		page = fs.readFileSync("./html/res_reponse_defie.html", "utf-8");
 	}
 
 
 
 	marqueurs = {};
-	marqueurs.compte = query.compte;
+	marqueurs.compte = compte;
 	page = page.supplant(marqueurs);
 
 
