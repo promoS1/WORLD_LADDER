@@ -3,15 +3,16 @@
 var fs = require("fs");
 require('remedial');
 
+
 var trait = function (req, res, query) {
 	
 	var contenu_fichier;
 	var liste_membres;
 	var compte;
+	var adversaire_trouve;
 	var adversaire;
 	var liste;
 	var i;
-	var adversaire_trouve = false;
 	var marqueurs = {};
 	var page;
 
@@ -20,6 +21,8 @@ var trait = function (req, res, query) {
 	
 	contenu_fichier = fs.readFileSync("./json/salon.json", "utf-8");
 	liste_membres = JSON.parse(contenu_fichier);
+
+	adversaire_trouve = false
 
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte == query.compte) {
@@ -46,15 +49,7 @@ var trait = function (req, res, query) {
 			}		
 		}
 
-/*	// RECHERCHE DU NOM DE L'ADVERSAIRE
-	for (i = 0; i < liste_membres.length; i++) {
-		if (liste_membres[i].compte !== query.compte) {
-			if (liste_membres[i].etat == "attente") {
-				adversaire = liste_membres[i];
-			}
-		}
-	}
-*/	
+
 
 	marqueurs.compte = query.compte;
 	marqueurs.adversaire = adversaire;

@@ -5,7 +5,7 @@ require('remedial');
 
 var trait = function (req, res, query) {
 
-    var marqueurs;
+    var marqueurs={};
     var compte;
     var page;
     var i;
@@ -55,8 +55,6 @@ var trait = function (req, res, query) {
 					
 		}
 	
-	
-		marqueurs = {};
         marqueurs.compte = query.compte;
 		marqueurs.adversaire = query.adversaire;
 		marqueurs.joueurs = liste;

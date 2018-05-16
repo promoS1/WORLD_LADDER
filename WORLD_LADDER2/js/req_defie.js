@@ -21,13 +21,13 @@ var trait = function (req, res, query) {
 	// MODIFICATION DU JSON "SALON.JSON"
 	
 	for ( i = 0; i < liste_membres.length; i++) {
-		if (liste_membres[i].compte == query.compte) {
+		if (liste_membres[i].compte === query.compte) {
 			liste_membres[i].etat = "attente";
 			liste_membres[i].adversaire = query.adversaire;
 			marqueurs.adversaire = query.adversaire;	
 			marqueurs.compte = query.compte;	
 			marqueurs.mdp = liste_membres[i].mdp;
-		} else if ( liste_membres[i].compte == query.adversaire ) {
+		} else if ( liste_membres[i].compte === query.adversaire ) {
 			liste_membres[i].etat = "attente";
 			liste_membres[i].adversaire = query.compte;			
 		}

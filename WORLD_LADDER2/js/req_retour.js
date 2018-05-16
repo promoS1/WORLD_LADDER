@@ -11,6 +11,7 @@ var trait = function (req, res, query) {
 	var adversaire;
 	var i;
 	var page;
+	var liste;
 	var marqueurs={};
 
 	// LIRE LE JSON 
@@ -22,14 +23,14 @@ var trait = function (req, res, query) {
 	for (i = 0; i < liste_membres.length; i++) {
 		if ( liste_membres[i].compte === query.compte ) {
 			adversaire = liste_membres[i].adversaire
+			liste_membres[i].etat = "connecté";
+			liste_membres[i].adversaire = "non";
 			for (i = 0; i < liste_membres.length; i++) {
 				if ( liste_membres[i].compte === adversaire ) {
 					liste_membres[i].etat = "connecté";
 					liste_membres[i].adversaire = "non";
 				}
-			liste_membres[i].etat = "connecté";
-			liste_membres[i].adversaire = "non";
-			}
+			}		
 		}		
 	}
 
@@ -37,6 +38,12 @@ var trait = function (req, res, query) {
 	//REECRITURE DU JSON "SALON.JSON" --> REPASSE LES MEMBRES EN "CONNECTÉ"
 	contenu_fichier = JSON.stringify(liste_membres);
 	fs.writeFileSync("./json/salon.json", contenu_fichier, "utf-8");
+
+	for (i = 0; i < liste_membres.length; i++) {
+		if (liste_membres[i].compte !== query.compte && liste_membres[i].etat === "connecté") {
+			liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_membres[i].compte +"'><button class='button1' name='action' value=''>" + liste_membres[i].compte + "</button></form>";
+		}
+	}
 
 	page = fs.readFileSync("./html/res_salon.html", "utf-8");
 
