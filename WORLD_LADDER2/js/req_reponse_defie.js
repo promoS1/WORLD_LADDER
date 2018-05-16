@@ -34,13 +34,7 @@ var trait = function (req, res, query) {
 		}
 	}
 
-	// REDIRECTION VERS PAGE HTML SI JOUEUR DÉFIÉ
-
-	if (adversaire_trouve === false) {
-		page = fs.readFileSync('./html/res_salon.html','utf-8');
-	} else if (adversaire_trouve === true) {
-		page = fs.readFileSync("./html/res_reponse_defie.html", "utf-8");
-	}
+	// GENÈRE LISTE DE JOUEURS CONNECTÉ SUR LE SALON "salon.json"
 
 	liste= "";
 		for (i = 0; i < liste_membres.length; i++) {
@@ -48,6 +42,20 @@ var trait = function (req, res, query) {
 				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name ='adversaire' value='"+ liste_membres[i].compte +"'><button class='button1' name='action' value=''>" + liste_membres[i].compte + "</button></form>";
 			}		
 		}
+
+
+	// REDIRECTION VERS PAGE HTML SI JOUEUR DÉFIÉ
+
+	if (adversaire_trouve === false) {
+		page = fs.readFileSync('./html/res_salon.html','utf-8');
+		marqueurs.compte = query.compte;
+		marqueurs.adversaire = adversaire;
+		marqueurs.joueurs = liste;
+		page = page.supplant(marqueurs);
+	} else if (adversaire_trouve === true) {
+		page = fs.readFileSync("./html/res_reponse_defie.html", "utf-8");
+	}
+
 
 
 
