@@ -1,1 +1,1 @@
-[{"compte":"sam","etat":"connecté","libre":"sam","adversaire":"t"},{"compte":"boubou","etat":"attente","libre":"boubou","adversaire":"sam"},{"compte":"t","etat":"attente","libre":"oui","adversaire":"sam"}]
+[{"compte":"sam","etat":"connecté","libre":"sam","adversaire":"non"},{"compte":"boubou","etat":"connecté","libre":"boubou","adversaire":"non"},{"compte":"t","etat":"connecté","libre":"oui","adversaire":"non"}]

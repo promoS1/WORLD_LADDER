@@ -8,9 +8,10 @@ var trait = function (req, res, query) {
 	
 	var contenu_fichier;
 	var liste_membres;
+	var adversaire;
 	var i;
 	var page;
-	var marqueurs;
+	var marqueurs={};
 
 	// LIRE LE JSON 
 	contenu_fichier = fs.readFileSync("./json/salon.json", "UTF-8");
@@ -19,12 +20,19 @@ var trait = function (req, res, query) {
 	// MODIFICATION DU JSON "SALON.JSON" REPASSER EN ETAT : "CONNECTÉ"
 	
 	for (i = 0; i < liste_membres.length; i++) {
-		if ( liste_membres[i].compte === query.compte) {
+		if ( liste_membres[i].compte === query.compte ) {
+			adversaire = liste_membres[i].adversaire
+			for (i = 0; i < liste_membres.length; i++) {
+				if ( liste_membres[i].compte === adversaire ) {
+					liste_membres[i].etat = "connecté";
+					liste_membres[i].adversaire = "non";
+				}
 			liste_membres[i].etat = "connecté";
-		} else if ( liste_membres[i].compte === query.adversaire) {
-			liste_membres[i].etat = "connecté"
-		}
+			liste_membres[i].adversaire = "non";
+			}
+		}		
 	}
+
 
 	//REECRITURE DU JSON "SALON.JSON" --> REPASSE LES MEMBRES EN "CONNECTÉ"
 	contenu_fichier = JSON.stringify(liste_membres);
@@ -32,11 +40,13 @@ var trait = function (req, res, query) {
 
 	page = fs.readFileSync("./html/res_salon.html", "utf-8");
 
-	marqueurs = {};
-	marqueurs.compte = query.compte
+	marqueurs.adversaire = adversaire;
+	marqueurs.compte = query.compte;
 	page =page.supplant(marqueurs);
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(page);
     res.end();
 }
+
+module.exports = trait;
