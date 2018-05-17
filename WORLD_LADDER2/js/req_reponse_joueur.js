@@ -38,6 +38,7 @@ var trait = function (req, res, query) {
 
 
 	marqueurs = {};
+	marqueurs.joueur = query.joueur;
 	marqueurs.adversaire = adversaire;
 	marqueurs.compte = compte;
 

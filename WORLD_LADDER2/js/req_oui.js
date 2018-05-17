@@ -12,6 +12,7 @@ var trait = function (req, res, query) {
 	var i;
 	var compte;
 	var adversaire;
+	var x;
 
 // LIT LE JSON "salon.json" 
 	contenu_fichier = fs.readFileSync("./json/salon.json", "utf-8");
@@ -36,10 +37,7 @@ var trait = function (req, res, query) {
 	contenu_fichier = JSON.stringify(liste_membres);
 	fs.writeFileSync("./json/salon.json", contenu_fichier, "utf-8");
 
-
-
 	page = fs.readFileSync('./html/res_joueur_actif.html', 'utf-8');
-
 
 	marqueurs = {};
 	marqueurs.adversaire = adversaire;
