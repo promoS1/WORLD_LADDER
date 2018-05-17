@@ -37,6 +37,7 @@ var req_check = require('./js/req_check.js');
 var req_reponse_joueur = require('./js/req_reponse_joueur.js');
 var req_page_deplacement = require('./js/req_page_deplacement.js');
 var req_passif = require('./js/req_passif.js');
+var req_dice = require ('./js/req_dice.js');
 
 
 //-------------------------------------------------------------------------
@@ -47,7 +48,7 @@ var traite_requete = function (req, res) {
 
 	var ressource;
 	var requete;
-	var pathname;;
+	var pathname;
 	var query;
 
 	console.log("URL reçue : " + req.url);
