@@ -17,16 +17,16 @@ var trait = function (req, res, query) {
 	var contenu_fichier2;
 	var partie;
 	var joueur;
-	var i_1;
-	var i_2;
-	var i_3;
-	var i_4;
-	var i_5;
-	var i_6;
-	var i_7;
-	var i_8;
-	var i_9;
-	var i_10;
+	var joueur2;
+	var i;
+	var grille;
+	var colonne;
+	var ligne_1;
+	var ligne_2;
+	var nb;
+	var hote;
+
+	
 
 
 // LIT LE JSON "salon.json" 
@@ -38,11 +38,14 @@ var trait = function (req, res, query) {
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte === query.compte) {
 			compte = query.compte;
+			hote = compte;
 			adversaire = liste_membres[i].adversaire;
+			liste_membres[i].hote = hote;
 			liste_membres[i].etat = "joue";
 			for (i = 0; i < liste_membres.length; i++) {
 				if (liste_membres[i].compte === adversaire) {
 					liste_membres[i].etat = "joue";
+					liste_membres[i].hote = hote;
 				}
 			}
 		}
@@ -53,140 +56,35 @@ var trait = function (req, res, query) {
 	contenu_fichier = JSON.stringify(liste_membres);
 	fs.writeFileSync("./json/salon.json", contenu_fichier, "utf-8");
 
-// CREATION DU JSON DE LA PARTIE "{adversaire}.json"
-	partie = [];
-	joueur= {};
-	joueur.compte = compte;
-	joueur.tour = "actif";
-	joueur.position = "1";
-	joueur.adversaire = adversaire;	
-	partie[0] = joueur;
+
+
+
+
+	grille = '<table width = "90%" id="table1">';
 	
-	contenu_fichier2 = JSON.stringify(partie);
-	fs.writeFileSync("./json/partie_en_cours/" + adversaire + ".json", contenu_fichier2, "utf-8");
+	nb = Number(101);
 	
+	for (colonne = 0; colonne < 5; colonne++) {
+		grille += "<tr>";	
 
-
-	var grille;
-	var ligne;
-	var ligne2;
-	var colonne;
-	var colonne2;
-	var i;
-
-	
-
-	grille = "<table>";
-
-
-// LIGNE 1
-	i_1 = 100;
-	for (ligne =0 ; ligne < 1; ligne++) {
-		grille += "<tr>\n";	
-		for (colonne=0; colonne < 10; colonne++) {
-			grille += "<td>";	grille += i_1;	grille += "</td>";
-			i_1--;
+		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
+			nb = nb - 1;
+			grille += "<td>";	grille += nb;	grille += "</td>";
 		}
-		grille += "</tr>\n";
-	}
-// LIGNE 2
-	i_2 = 81;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_2;	grille += "</td>";				
-			i_2++;
-		}
-		grille += "</tr>\n";
-	}
-// LIGNE 3
-	i_3 = 80;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_3;	grille += "</td>";				
-			i_3--;
-		}
-		grille += "</tr>\n";
-	}
 
-//LIGNE 4
-	i_4 = 61;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_4;	grille += "</td>";				
-			i_4++;
-		}
-		grille += "</tr>\n";
-	}
+		grille += "</tr>\n";	grille += "<tr>";	
+		nb = nb - 11;
 
-// LIGNE 5
-	i_5 = 60;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_5;	grille += "</td>";				
-			i_5--;
+		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
+			nb = nb + 1;
+			grille += "<td>";	grille += nb;	grille += "</td>";
 		}
-		grille += "</tr>\n";
-	}
 
-// LIGNE 6
-	i_6 = 41;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_6;	grille += "</td>";				
-			i_6++;
-		}
 		grille += "</tr>\n";
-	}
+		nb = nb - 9	;
+	}	
 
-// LIGNE 7
-	i_7 = 40;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_7;	grille += "</td>";				
-			i_7--;
-		}
-		grille += "</tr>\n";
-	}
-
-// LIGNE 8
-	i_8 = 21;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_8;	grille += "</td>";				
-			i_8++;
-		}
-		grille += "</tr>\n";
-	}
-
-// LIGNE 9
-	i_9 = 20;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_9;	grille += "</td>";				
-			i_9--;
-		}
-		grille += "</tr>\n";
-	}
-
-// LIGNE 10
-	i_10 = 1;
-	for (ligne2 =0 ; ligne2 < 1; ligne2++) {
-		grille += "<tr>\n";	
-		for (colonne2=0; colonne2 < 10; colonne2++) {
-			grille += "<td>";	grille += i_10;	grille += "</td>";				
-			i_10++;
-		}
-		grille += "</tr>\n";
-	}
-	grille += "</table>";
+	grille += '</table>';
 	// INSCRIRE ICI LES CONDITIONS DE JEU
 
 /*			if ( INSCRICRE CONDITIONS ) {
@@ -195,11 +93,38 @@ var trait = function (req, res, query) {
 			} */
 
 
+// CREATION DU JSON DE LA PARTIE "{Joueur Passif}.json"
+	partie = [];
+	joueur= {};
+	joueur.compte = compte;
+	joueur.player = "J1";
+	joueur.tour = "actif";
+	joueur.lancer = Number (0);
+	joueur.position = Number (1);
+	joueur.adversaire = adversaire;	
+	joueur.grille = grille;
+
+	joueur2 = {};
+	joueur2.compte = adversaire;
+	joueur2.player = "J2";
+	joueur2.tour = "passif";
+	joueur2.lancer = Number (0);
+	joueur2.position = Number (1);
+	joueur2.adversaire = compte;
+	joueur2.grille = grille;
+
+	partie[0] = joueur;
+	partie[1] = joueur2;
+	
+	contenu_fichier2 = JSON.stringify(partie);
+	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier2, "utf-8");
+	
 
 	page = fs.readFileSync('./html/res_joueur_actif.html', 'utf-8');
 
 	marqueurs = {};
 	marqueurs.grille = grille;
+	marqueurs.hote = hote;
 	marqueurs.adversaire = adversaire;
 	marqueurs.compte = compte;
 	page = page.supplant(marqueurs);

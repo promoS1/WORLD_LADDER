@@ -2,42 +2,43 @@
 <!Doctype html>
 <html>
 
-<head>
-<meta charset = "UTF-8">
-<title>WorldLadder</title>
-<style type="text/css"> 
-      #table1
-      {
-		border-collapse: collapse;
-      }
-      #table1 td
-      {
-		border: 1px solid black
-      }
-
-
-</style>
-</head>
-
-<body>
-	<form action="/req_lancer" method="GET">
-		<button name="compte" value="{compte}">Lancer les dés</button>	<br><br>
-	</form>
-Page ou la partie commence : Le joueur invité (joueur_actif) lance les dés. <br><br><br>
+	<head>
+		<meta charset = "UTF-8">
+		<title>WorldLadder</title>
+		<style type="text/css"> 
+      		#table1
+     		{
+				border-collapse: collapse;
+      		}
+     		 #table1 td
+			{
+				border: 1px solid black
+			}
+		</style>
+	</head>
 
 
 
+	<body>
+		<form action="/req_lancer" method="GET">
+			<input type = "hidden" name = "compte" value = "{compte}">
+			<input type = "hidden" name = "adversaire" value = "{adversaire}">
+			<button name="" value="">Lancer les dés</button>	<br><br>
+		</form>
+		Page ou la partie commence : Le joueur invité (joueur_actif) lance les dés. <br><br><br>
 
-<table width="90%" id="table1">
 
-{grille}
+		{grille} 
+		
+		<br>
+		<img src = "./html/pion_bleu.png">
+		<img src = "./html/pion_rouge.png">
+		<br>
 
-</table>
+		Plateau_de_jeu à mettre en arrière plan dans un second temps : <br><br><br>
 
-<br>
-modèle à mèttre en arrière plan dans un second temps : <br><br><br>
-<img src = "./html/plateau_de_jeu.png">
+		<img src = "./html/plateau_de_jeu.png">
 
-	
+	</body>
 
-</body>
+</html>
