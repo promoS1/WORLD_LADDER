@@ -23,10 +23,9 @@ var req_modele_confirmation_inscription = require('./js/req_modele_confirmation_
 var req_modele_formulaire_inscription = require('./js/req_modele_formulaire_inscription.js');
 var req_non = require('./js/req_non.js');
 var req_oui = require('./js/req_oui.js');
-var req_oui2 = require('./js/req_oui2.js');
 var req_perdu = require('./js/req_perdu.js');
 var req_reponse_defie = require('./js/req_reponse_defie.js');
-var req_sauter_pion = require('./js/req_sauter_pion.js');
+var req_page_conditions = require('./js/req_page_conditions.js');
 var req_statique = require('./js/req_statique.js');
 var req_erreur = require('./js/req_erreur.js');
 var req_lancer = require('./js/req_lancer.js');
@@ -38,6 +37,7 @@ var req_reponse_joueur = require('./js/req_reponse_joueur.js');
 var req_page_deplacement = require('./js/req_page_deplacement.js');
 var req_passif = require('./js/req_passif.js');
 var req_dice = require ('./js/req_dice.js');
+var req_joueur_passif = require ('./js/req_joueur_passif.js');
 
 
 //-------------------------------------------------------------------------
@@ -90,17 +90,14 @@ var traite_requete = function (req, res) {
 			case '/req_oui':
 				req_oui(req, res, query);
 				break;
-			case '/req_oui2':
-				req_oui2(req, res, query);
-				break;
 			case '/req_perdu':
 				req_perdu(req, res, query);
 				break;
 			case '/req_reponse_defie':
 				req_reponse_defie(req, res, query);
 				break;
-			case '/req_sauter_pion' :
-				req_sauter_pion(req, res, query);
+			case '/req_page_conditions' :
+				req_page_conditions(req, res, query);
 				break;
 			case '/req_lancer':
 				req_lancer(req, res, query);
@@ -126,6 +123,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_passif':
 				req_passif(req, res, query);
+				break;
+			case 'req_joueur_passif':
+				req_joueur_passif(req, res, query);
 				break;
 
 

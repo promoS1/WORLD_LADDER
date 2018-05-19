@@ -1,7 +1,8 @@
-"use strict";
+/*"use strict";
 
 var fs = require("fs");
 require ("remedial");
+var trait = function (req, res, query) {
 var function_dice = function() {
 
 	var jet_random;
@@ -21,13 +22,12 @@ var function_dice = function() {
 	liste_membres = JSON.parse(contenu_fichier);
 
 	for (i = 0; i < liste_membres.length; i++) {
-		if (compte = liste_membres[i].compte) {
+		if (compte === liste_membres[i].compte) {
 			hote = liste_membres.hote;
 		}
 	}
 
 // LECTURE DU JSON "{hote}.json" 
-
 	contenu_fichier2 = fs.readFileSync("./json/partie_en_cours/" + hote + ".json", "UTF-8");
 	partie = JSON.parse(contenu_fichier2);
 
@@ -39,14 +39,19 @@ var function_dice = function() {
 	
 // ECRITURE LA VALEUR DU JET DANS JSON "{hote}.json"
 	for (i = 0; i < partie.length; i++) {
-		if (compte === partie[i].hote) {
+		if (compte === partie[i].compte) {
 			partie[i].lancer = jet_random;
 		}
 	}
 
 	contenu_fichier2 = JSON.stringify(partie);
 	fs.writeFileSync("./json/partie_encours/" + hote + ".json", contenu_fichier, "UTF-8");
-
+	
 };
-
 module.exports = function_dice;
+};
+module.exports = trait;
+
+*/
+
+
