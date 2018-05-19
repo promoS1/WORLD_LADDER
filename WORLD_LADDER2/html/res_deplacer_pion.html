@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-		<meta http-equiv="refresh" content="1.5; url=/req_deplacer_pion?compte={compte}">
+		<meta http-equiv="refresh" content="1.5; url=/req_deplacer_pion?compte={compte}&hote={hote}">
 		<title>WorldLadder</title>
 		<style type="text/css"> 
       		#table1
@@ -17,24 +17,10 @@
 		</style>
 	</head>
 
+	<body background = "./html/img_bg2.png">
 
-
-	<body>
-		<form action="/req_lancer" method="GET">
-			<input type = "hidden" name = "compte" value = "{compte}">
-			<input type = "hidden" name = "adversaire" value = "{adversaire}">
-			<button name="" value="">Lancer les dés</button>	<br><br>
-		</form>
-		LES PIONS AVANCE DE UN EN UN  : /res_deplacer_pion<br><br>
-
-
-		{grille}<br>
+		{grille}
 		 {dice}
-		
-		<br>
-		<img src = "./html/pion_bleu.png">
-		<img src = "./html/pion_rouge.png">
-		<br>
 
 		Plateau_de_jeu à mettre en arrière plan dans un second temps : <br><br><br>
 

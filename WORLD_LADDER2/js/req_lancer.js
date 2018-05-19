@@ -85,10 +85,10 @@ var trait = function (req, res, query) {
 		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 			nb = nb - 1;
 			grille += "<td>";		
-			if (nb === partie[0].position) {
+			if (nb === partie[0].position_temporaire) {
 				grille += "<img src = './html/pion_bleu.png'> ";
 			}
-			if (nb === partie[1].position) {
+			if (nb === partie[1].position_adversaire) {
 				grille += "<img src = './html/pion_rouge.png'> ";
 			}
 			grille += nb; 		grille += "</td>";
@@ -101,10 +101,10 @@ var trait = function (req, res, query) {
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 			nb = nb + 1;
 			grille += "<td>";	
-			if (nb === partie[0].position) {
+			if (nb === partie[0].position_temporaire) {
 				grille += "<img src = './html/pion_bleu.png'> ";
 			}
-			if (nb === partie[1].position) {
+			if (nb === partie[1].position_adversaire) {
 				grille += "<img src = './html/pion_rouge.png'> ";
 			}
 			grille += nb;	grille += "</td>";

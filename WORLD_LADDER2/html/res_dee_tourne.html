@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-		<meta http-equiv="refresh" content="1; url=/req_deplacer_pion?compte={compte}">
+		<meta http-equiv="refresh" content="1.5; url=/req_deplacer_pion?compte={compte}">
 		<title>WorldLadder</title>
 		<style type="text/css"> 
       		#table1
@@ -19,23 +19,10 @@
 
 
 
-	<body>
-		<form action="/req_lancer" method="GET">
-			<input type = "hidden" name = "compte" value = "{compte}">
-			<input type = "hidden" name = "adversaire" value = "{adversaire}">
-			<button name="" value="">Lancer les dés</button>	<br><br>
-		</form>
-		Vous lancer les dés: Le joueur invité (joueur_actif) lance les dés. <br>
-		res_dee_tourne<br>
-
+	<body background = "./html/img_bg2.png">
 
 		{grille} <br>
 		{dice}
-		
-		<br>
-		<img src = "./html/pion_bleu.png">
-		<img src = "./html/pion_rouge.png">
-		<br>
 
 		Plateau_de_jeu à mettre en arrière plan dans un second temps : <br><br><br>
 

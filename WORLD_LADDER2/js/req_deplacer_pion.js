@@ -12,6 +12,7 @@ var trait = function (req, res, query) {
 	var contenu_fichier2;
 	var partie;
 	var i;
+	var a;
 	var jet_random;
 	var grille;
 	var nb;
@@ -70,6 +71,7 @@ var trait = function (req, res, query) {
 
 for (i = 0; i < partie.length; i++) {
 	if (partie[i].compte === query.compte) {
+		a = i;
 
 		if (partie[i].position_temporaire !== partie[i].position) {
 			
@@ -120,16 +122,6 @@ for (i = 0; i < partie.length; i++) {
 			partie[1].grille = grille;
 	
 		}
-
-// AFFICHAGE DE LA PAGE HTML EN FONCTION DE SI OUI OU NON LE PION A FINI D'AVANCER
-		if (partie[i].position_temporaire !== partie[i].position) {
-			page = fs.readFileSync('./html/res_deplacer_pion.html', 'utf-8');
-		} else {
-			page = fs.readFileSync('./html/res_page_conditions.html', 'utf-8');
-		}
-
-
-
 	}
 }
 //SAUVEGARDE DE LA NOUVELLE GRILLE
@@ -157,7 +149,12 @@ for (i = 0; i < partie.length; i++) {
 	}
 
 
-
+// AFFICHAGE DE LA PAGE HTML EN FONCTION DE SI OUI OU NON LE PION A FINI D'AVANCER
+		if (partie[a].position_temporaire !== partie[a].position) {
+			page = fs.readFileSync('./html/res_deplacer_pion.html', 'utf-8');
+		} else {
+			page = fs.readFileSync('./html/res_page_conditions.html', 'utf-8');
+		}
 
 
 

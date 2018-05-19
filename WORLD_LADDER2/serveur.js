@@ -124,7 +124,7 @@ var traite_requete = function (req, res) {
 			case '/req_passif':
 				req_passif(req, res, query);
 				break;
-			case 'req_joueur_passif':
+			case '/req_joueur_passif':
 				req_joueur_passif(req, res, query);
 				break;
 
