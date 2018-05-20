@@ -13,6 +13,7 @@ var trait = function (req, res, query) {
 	var partie;
 	var i;
 	var a;
+	var b;
 	var jet_random;
 	var grille;
 	var nb;
@@ -43,8 +44,11 @@ var trait = function (req, res, query) {
 // LECTURE DU "jet_random" DANS LE JSON "{hote}.json"
 	for (i = 0; i < partie.length; i++) {
 		if (partie[i].compte === compte) {
+			a = i;
 			jet_random = partie[i].lancer;
 			grille = partie[i].grille;
+		} else {
+			b = i;
 		}
 	}
 
@@ -71,7 +75,6 @@ var trait = function (req, res, query) {
 
 for (i = 0; i < partie.length; i++) {
 	if (partie[i].compte === query.compte) {
-		a = i;
 
 		if (partie[i].position_temporaire !== partie[i].position) {
 			
@@ -84,37 +87,46 @@ for (i = 0; i < partie.length; i++) {
 				grille += "<tr>";	
 
 // LIGNE HORIZONTALES : 100; 80; 60; 40; 20; 
-				for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
-					nb = nb - 1;
-					grille += "<td>";		
-					if(nb === partie[i].position_temporaire && partie[i].hote === query.compte) {
-						grille += "<img src = './html/pion_bleu.png'> ";
-					}
-					if(nb === partie[i].position_temporaire && partie[i].hote !== query.compte) {
-						grille += "<img src = './html/pion_rouge.png'> ";
-					}
-					grille += nb; 		grille += "</td>";
-				}
+		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
+			nb = nb - 1;
+			grille += "<td>";		
+			if (nb === partie[a].position_temporaire && partie[a].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'> ";
+			} else if (nb === partie[a].position_temporaire && partie[a].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			}
+			if (nb === partie[b].position && partie[b].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			} else if (nb === partie[b].position && partie[b].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'>";
+			}
+			grille += nb; 		grille += "</td>";
+		}
 
-				grille += "</tr>\n";	grille += "<tr>";	
-				nb = nb - 11;
+		grille += "</tr>\n";	grille += "<tr>";	
+		nb = nb - 11;
 
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
-				for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
-					nb = nb + 1;
-					grille += "<td>";	
-					if(nb === partie[i].position_temporaire) {
-						grille += "<img src = './html/pion_bleu.png'> ";
-					}
-					if(nb === partie[i].position_adversaire) {
-						grille += "<img src = './html/pion_rouge.png'> ";
-					}
-					grille += nb;	grille += "</td>";
-				}
+		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
+			nb = nb + 1;
+			grille += "<td>";	
+			if (nb === partie[a].position_temporaire && partie[a].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'> ";
+			} else if (nb === partie[a].position_temporaire && partie[a].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			}
+			if (nb === partie[b].position && partie[b].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			} else if (nb === partie[b].position && partie[b].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'>";
+			}
+			grille += nb;	grille += "</td>";
+		}
 
-				grille += "</tr>\n";
-				nb = nb - 9	;
-			}	
+		grille += "</tr>\n";
+		nb = nb - 9	;
+	}	
+
 			
 			grille += '</table>';
 		

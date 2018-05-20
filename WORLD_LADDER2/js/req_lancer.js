@@ -14,6 +14,8 @@ var trait = function (req, res, query) {
 	var contenu_fichier2;
 	var partie;
 	var i;
+	var a;
+	var b;
 	var position_J1;
 	var position_J2;
 	var hote;
@@ -51,10 +53,16 @@ var trait = function (req, res, query) {
 // ECRITURE LA VALEUR DU JET DANS JSON "{hote}.json"	
 	for (i = 0; i < partie.length; i++) {
 		if (partie[i].compte === compte) {
-			partie[i].lancer = jet_random;
-			partie[i].position_temporaire = partie[i].position;
-			partie[i].position += jet_random;
-			grille = partie[i].grille;
+			a = i;
+			partie[a].lancer = jet_random;
+			partie[a].position_temporaire = partie[i].position;
+			partie[a].position += jet_random;
+			if (partie[a].position > 100) {
+				partie[a].position = 100
+			}
+			grille = partie[a].grille;
+		} else {
+			b = i;
 		}
 	}
 // ECRITURE: AJOUT DE "jet_random" DANS LE JSON "{hote}.json" 	
@@ -85,11 +93,15 @@ var trait = function (req, res, query) {
 		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 			nb = nb - 1;
 			grille += "<td>";		
-			if (nb === partie[0].position_temporaire) {
+			if (nb === partie[a].position_temporaire && partie[a].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'> ";
-			}
-			if (nb === partie[1].position_adversaire) {
+			} else if (nb === partie[a].position_temporaire && partie[a].compte !== hote) {
 				grille += "<img src = './html/pion_rouge.png'> ";
+			}
+			if (nb === partie[b].position && partie[b].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			} else if (nb === partie[b].position && partie[b].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'>";
 			}
 			grille += nb; 		grille += "</td>";
 		}
@@ -101,11 +113,15 @@ var trait = function (req, res, query) {
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 			nb = nb + 1;
 			grille += "<td>";	
-			if (nb === partie[0].position_temporaire) {
+			if (nb === partie[a].position_temporaire && partie[a].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'> ";
-			}
-			if (nb === partie[1].position_adversaire) {
+			} else if (nb === partie[a].position_temporaire && partie[a].compte !== hote) {
 				grille += "<img src = './html/pion_rouge.png'> ";
+			}
+			if (nb === partie[b].position && partie[b].compte !== hote) {
+				grille += "<img src = './html/pion_rouge.png'> ";
+			} else if (nb === partie[b].position && partie[b].compte === hote) {
+				grille += "<img src = './html/pion_bleu.png'>";
 			}
 			grille += nb;	grille += "</td>";
 		}
