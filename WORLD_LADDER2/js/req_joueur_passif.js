@@ -23,8 +23,9 @@ var trait = function (req, res, query) {
 	var img_dice;
 	var page;
 	var marqueurs;
+	var victoire;
 
-
+	victoire = false;
 	compte = query.compte;
 	hote = query.hote;
 
@@ -70,7 +71,7 @@ var trait = function (req, res, query) {
 			if (partie[a].position === 3) {
 				partie[a].position = 21;
 			} else if (partie[a].position === 8) {
-				partie[i].position = 30;
+				partie[a].position = 30;
 			} else if (partie[a].position === 28) {
 				partie[a].position = 84;
 			} else if (partie[a].position === 58) {
@@ -81,6 +82,8 @@ var trait = function (req, res, query) {
 				partie[a].position = 100;
 			} else if (partie[a].position === 90) {
 				partie[a].position = 91;
+			} else if (partie[a].position > 100) {
+				partie[a].position = 100;
 			}
 
 //				--------------------------------
@@ -88,7 +91,7 @@ var trait = function (req, res, query) {
 			if (partie[a].position === 17) {
 				partie[a].position = 3;
 			} else if (partie[a].position === 52) {
-				partie[i].position = 29;
+				partie[a].position = 29;
 			} else if (partie[a].position === 57) {
 				partie[a].position = 40;
 			} else if (partie[a].position === 62) {
@@ -101,6 +104,13 @@ var trait = function (req, res, query) {
 				partie[a].position = 79;
 			}
 
+//				--------------------------------
+// VERIFIE SI LE JOUEUR À GAGNÉ OU PERDU
+			if (partie[a].position === 100) {
+				partie[a].tour = "gagner";
+				partie[b].tour = "perdu";
+				victoire = true;
+			}
 
 
 
@@ -164,8 +174,12 @@ var trait = function (req, res, query) {
 	contenu_fichier = JSON.stringify(partie);
 	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier, "utf-8");
 
-	page = fs.readFileSync('./html/res_joueur_passif.html', 'utf-8');
-	
+	if (victoire === true) {
+		page = fs.readFileSync('./html/res_gagner.html', 'utf-8');		
+	} else {
+		page = fs.readFileSync('./html/res_joueur_passif.html', 'utf-8');
+	}
+
 	marqueurs = {};
 	marqueurs.dice = img_dice;
 	marqueurs.grille = grille;
