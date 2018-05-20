@@ -57,8 +57,10 @@ var trait = function (req, res, query) {
 	for (i = 0; i < partie.length; i++) {
 		if (partie[i].compte === compte) {
 			a = i;
+			partie[a].position_temporaire = 1;
 		} else {
 			b = i;
+			partie[b].position_temporaire = 1;
 		}
 	}
 
@@ -116,6 +118,9 @@ var trait = function (req, res, query) {
 			grille += '</table>';
 
 //----------------------------------------------------------------
+
+	contenu_fichier = JSON.stringify(partie);
+	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier, "utf-8");
 
 
 	marqueurs = {};
