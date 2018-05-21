@@ -175,6 +175,9 @@ var trait = function (req, res, query) {
 			grille += '</table>';
 
 //----------------------------------------------------------------
+				partie[a].position_temporaire = partie[a].position;
+				partie[b].position_temporaire = partie[b].position;
+						
 
 // ECRITURE DU NOUVEAU JSON "SALON.JSON"
 

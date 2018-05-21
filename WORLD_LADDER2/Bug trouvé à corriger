@@ -10,10 +10,6 @@ _ Modification de la de : statut "libre" / "non" pour afficher l'arrivé du joue
 		moment lorsqu'il est sur le menu.
 
 
-_ Rajout du code : Lors du déplacement du pion adversaire, le joueur passif ne vois pas ce qui ce déroule.
-				--> Permettre au joueur passif de suivre les déplacememnt du joueur actif.
-
-
 _ A coder : Les différentes options du mode Menu.
 
 _ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cases mystères (objets style 			monopoly, case prison, double tour, etc...)
