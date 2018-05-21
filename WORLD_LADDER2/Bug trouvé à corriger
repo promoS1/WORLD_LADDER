@@ -5,11 +5,6 @@
 
 
 
-_ Modification de la de : statut "libre" / "non" pour afficher l'arrivé du joueur dans le salon seulement
-		lorsqu'il clique sur "rejoindre le salon de joueurs" et non avant, comme c'est le cas pour le
-		moment lorsqu'il est sur le menu.
-
-
 _ A coder : Les différentes options du mode Menu.
 
 _ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cases mystères (objets style 			monopoly, case prison, double tour, etc...)
