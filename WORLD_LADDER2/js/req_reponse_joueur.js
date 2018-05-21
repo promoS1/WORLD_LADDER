@@ -34,6 +34,7 @@ var trait = function (req, res, query) {
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte === query.compte) {
 			compte = query.compte;
+			a = i;
 			hote = liste_membres[i].hote;
 			adversaire = liste_membres[i].adversaire;
 			if (liste_membres[i].etat === "connecté") {
@@ -47,6 +48,7 @@ var trait = function (req, res, query) {
 	}
 
 
+if (liste_membres[a].etat === "joue") {
 
 // LECTURE DU JSON "{hote}.json"
 	contenu_fichier = fs.readFileSync("./json/partie_en_cours/" + hote + ".json", "utf-8");
@@ -121,7 +123,7 @@ var trait = function (req, res, query) {
 
 	contenu_fichier = JSON.stringify(partie);
 	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier, "utf-8");
-
+}
 
 	marqueurs = {};
 	marqueurs.grille = grille;
