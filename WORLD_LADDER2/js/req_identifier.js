@@ -15,15 +15,19 @@ var trait = function (req, res, query) {
     var i;
     var trouve;
 	var test = false;
+	var membre_co_salon;
+	var contenu_fichier2;
+	var liste_fichier2;
+	var liste_temps_reel;
 	
 
 
-    // ON LIT LES COMPTES EXISTANTS
+// ON LIT LES COMPTES EXISTANTS
 
     contenu_fichier = fs.readFileSync("./json/membres.json", 'utf-8');    
     listeMembres = JSON.parse(contenu_fichier);
 
-    // ON VERIFIE QUE LE PSEUDO/PASSWORD EXISTE
+// ON VERIFIE QUE LE PSEUDO/PASSWORD EXISTE
 
     trouve = false;
     i = 0;
@@ -36,10 +40,10 @@ var trait = function (req, res, query) {
         i++;
     }
 
-    // ON RENVOIT UNE PAGE HTML 
+// ON RENVOIT UNE PAGE HTML 
 
     if(trouve === false) {
-        // SI IDENTIFICATION INCORRECTE, ON REAFFICHE PAGE ACCUEIL AVEC ERREUR
+// SI IDENTIFICATION INCORRECTE, ON REAFFICHE PAGE ACCUEIL AVEC ERREUR
 
         page = fs.readFileSync('./html/res_modele_accueil2.html', 'utf-8');
 
@@ -49,43 +53,38 @@ var trait = function (req, res, query) {
         page = page.supplant(marqueurs);
 
     } else if (trouve === true) {
-        // SI IDENTIFICATION OK, ON ENVOIE PAGE MENU
+// SI IDENTIFICATION OK, ON ENVOIE PAGE MENU
 
 		page = fs.readFileSync('./html/res_menu.html', 'UTF-8');
 		
 
 //==============================================================================================//
-//PREPARATION DE LA LISTE DE MEMBRE CONNECTE EN TEMPS REEL//
+// PREPARATION DE LA LISTE DE MEMBRE CONNECTE EN TEMPS REEL
 
-		var membre_co_salon;
-		var contenu_fichier2;
-		var liste_fichier2;
-		var liste_temps_reel;
-		var liste;
 		
 	
-//========================== Récupération des informatons du lobby =============================\\
-
+// RÉCUPÉRATION DES INFORMATION DU JSON "salon.json"
 		contenu_fichier2 = fs.readFileSync("./json/salon.json", 'utf-8');
 		liste_temps_reel = JSON.parse(contenu_fichier2);
 
-//========================== Premier cas, le joueur est déjà dans le salon ======================\\
 
+// PREMIER CAS, LE JOUEUR EST DÉJA DANS LE JSON "salon.json"
 		for(i = 0; i < liste_temps_reel.length; i++){
 			if(liste_temps_reel[i].compte === query.compte){
 				test = true;
 				liste_temps_reel[i].etat = "connecté";
+				liste_temps_reel[i].libre = "non";
 				contenu_fichier2 = JSON.stringify(liste_temps_reel);
 				fs.writeFileSync("./json/salon.json", contenu_fichier2, 'utf-8');
 			}
 		} 
 
-//========================= Second cas, le joueur n'y était pas ==================================\\
+// SECOND CAS, LE JOUEUR N'Y EST PAS 
 		if(test === false){
 			membre_co_salon = {};
 			membre_co_salon.compte = query.compte;
 			membre_co_salon.etat = "connecté";
-			membre_co_salon.libre = "oui";
+			membre_co_salon.libre = "non";
 			liste_temps_reel.push(membre_co_salon);
 
 			contenu_fichier2 = JSON.stringify(liste_temps_reel);
@@ -94,26 +93,18 @@ var trait = function (req, res, query) {
 
 		page = fs.readFileSync('./html/res_menu.html', 'UTF-8');
 
-		liste= "";
-		for (i = 0; i < liste_temps_reel.length; i++) {
-			if (liste_temps_reel[i].compte !== query.compte && liste_temps_reel[i].etat === "connecté") {
-				liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input type = 'hidden' name='mdp' value='"+ query.mdp +"'><input type = 'hidden' name ='adversaire' value='"+ liste_temps_reel[i].compte +"'><button class='button1' name='action' value=''>" + liste_temps_reel[i].compte + "</button></form>";
-			}
-					
-		}
 	
 	}
 		marqueurs = {};
         marqueurs.compte = query.compte;
-		marqueurs.mdp = query.mdp
+		marqueurs.mdp = query.mdp;
 		marqueurs.adversaire = query.adversaire;
-		marqueurs.joueurs = liste;
         page = page.supplant(marqueurs);
     
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(page);
     res.end();
-}
+};
 
 //---------------------------------------------------------------------------
 
