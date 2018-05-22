@@ -92,7 +92,8 @@ var trait = function (req, res, query) {
 // LIGNE HORIZONTALES : 100; 80; 60; 40; 20; 
 		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 			nb = nb - 1;
-			grille += "<td>";		
+			grille += "<td>";	
+	
 			if (nb === partie[a].position && partie[a].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'> ";
 			} else if (nb === partie[a].position && partie[a].compte !== hote) {
@@ -102,6 +103,12 @@ var trait = function (req, res, query) {
 				grille += "<img src = './html/pion_rouge.png'> ";
 			} else if (nb === partie[b].position && partie[b].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'>";
+			}
+// MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
+			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
+				grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
+				grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
 			}
 			grille += nb; 		grille += "</td>";
 		}
@@ -112,7 +119,8 @@ var trait = function (req, res, query) {
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 			nb = nb + 1;
-			grille += "<td>";	
+			grille += "<td>";
+//CHOISSIS LA BONNE COULEUR EN FONCTION DE SI LE JOUEUR EST L'HOTE DE LA PARTIE OU NON
 			if (nb === partie[a].position && partie[a].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'> ";
 			} else if (nb === partie[a].position && partie[a].compte !== hote) {
@@ -121,7 +129,13 @@ var trait = function (req, res, query) {
 			if (nb === partie[b].position && partie[b].compte !== hote) {
 				grille += "<img src = './html/pion_rouge.png'> ";
 			} else if (nb === partie[b].position && partie[b].compte === hote) {
-				grille += "<img src = './html/pion_bleu.png'>";
+				grille += "<img src = './html/pion_bleu.png'> ";
+			}
+// MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
+			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
+				grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
+				grille += "<img src = './html/petit_pas_droite_rouge.png'>";
 			}
 			grille += nb;	grille += "</td>";
 		}

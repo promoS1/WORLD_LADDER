@@ -38,7 +38,77 @@ var trait = function (req, res, query) {
 		}
 	}
 
+// ON CREER UNE GRILLE SPÉCIFIQUE POUR LE JOUEUR ACTIF
+		if (partie[a].tour === "passif") {
+//-------------------------------------------------------------------------
+	// CREATION DU PLATEAU DE JEU 
+			grille = '<table width = "90%" id="table1">';
+		
+			nb = Number(101);
+		
+			for (colonne = 0; colonne < 5; colonne++) {
+				grille += "<tr>";	
 
+// LIGNE HORIZONTALES : 100; 80; 60; 40; 20; 
+				for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
+					nb = nb - 1;
+					grille += "<td>";		
+					if (nb === partie[a].position && partie[a].compte === hote) {
+						grille += "<img src = './html/pion_bleu.png'> ";
+					} else if (nb === partie[a].position && partie[a].compte !== hote) {
+						grille += "<img src = './html/pion_rouge.png'>";
+					}
+					if (nb === partie[b].position && partie[a].compte === hote) {
+						grille += "<img src = './html/pion_rouge.png'> ";
+					} else if (nb === partie[b].position && partie[a].compte !== hote) {
+						grille += "<img src = './html/pion_bleu.png'> ";
+					}
+// MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
+				if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
+					grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+				} else if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
+					grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+				}									
+					grille += nb; 		grille += "</td>";
+				}
+
+				grille += "</tr>\n";	grille += "<tr>";	
+				nb = nb - 11;
+
+// LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
+				for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
+					nb = nb + 1;
+					grille += "<td>";	
+					if (nb === partie[a].position && partie[a].compte === hote) {
+						grille += "<img src = './html/pion_bleu.png'> ";
+					} else if (nb === partie[a].position && partie[a].compte !== hote) {
+						grille += "<img src = './html/pion_rouge.png'>";
+					}
+					if (nb === partie[b].position && partie[a].compte === hote) {
+						grille += "<img src = './html/pion_rouge.png'> ";
+					} else if (nb === partie[b].position && partie[a].compte !== hote) {
+						grille += "<img src = './html/pion_bleu.png'> ";
+					}	
+// MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
+				if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
+					grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+				} else if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
+					grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+				}										
+					grille += nb;	grille += "</td>";
+				}
+
+				grille += "</tr>\n";
+				nb = nb - 9	;
+			}	
+
+	partie[b].position_temporaire = partie[b].position;
+	partie[a].position_temporaire = partie[a].position;
+			grille += '</table>';
+
+//----------------------------------------------------------------
+// AFFICHE UNE GRILLE SPÉCIFIQUE AU JOUEUR ACTIF (RETIRE LES EMPREINTES)
+	} else {
 //-------------------------------------------------------------------------
 	// CREATION DU PLATEAU DE JEU 
 			grille = '<table width = "90%" id="table1">';
@@ -81,7 +151,7 @@ var trait = function (req, res, query) {
 						grille += "<img src = './html/pion_rouge.png'> ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
-					}						
+					}	
 					grille += nb;	grille += "</td>";
 				}
 
@@ -89,12 +159,12 @@ var trait = function (req, res, query) {
 				nb = nb - 9	;
 			}	
 
+	partie[b].position_temporaire = partie[b].position;
+	partie[a].position_temporaire = partie[a].position;
 			grille += '</table>';
 
-//----------------------------------------------------------------
-
-
-
+//----------------------------------------------------------------		
+	}
 
 
 // VERIFIE SI C'EST AU TOUR DU JOUEUR DE JOUER OU NON
@@ -107,6 +177,9 @@ var trait = function (req, res, query) {
 	}
 
 
+// ECRITURE DU NOUVEAU JSON "salon.json"
+	contenu_fichier = JSON.stringify(partie);
+	fs.writeFileSync('./json/partie_en_cours/' + hote + '.json', contenu_fichier, 'utf-8');
 
 	marqueurs = {};
 	marqueurs.grille = grille;
@@ -121,5 +194,5 @@ var trait = function (req, res, query) {
 
 //--------------------------------------------------------------------------
 
-module.exports = trait;
+module.exports = trait
 

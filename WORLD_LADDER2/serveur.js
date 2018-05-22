@@ -37,7 +37,6 @@ var req_reponse_joueur = require('./js/req_reponse_joueur.js');
 var req_page_deplacement = require('./js/req_page_deplacement.js');
 var req_passif = require('./js/req_passif.js');
 var req_dice = require ('./js/req_dice.js');
-var req_joueur_passif = require ('./js/req_joueur_passif.js');
 var req_deplacement_1 = require ('./js/req_deplacement_1.js');
 var req_deplacement_2 = require ('./js/req_deplacement_2.js');
 
@@ -125,9 +124,6 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_passif':
 				req_passif(req, res, query);
-				break;
-			case '/req_joueur_passif':
-				req_joueur_passif(req, res, query);
 				break;
 			case '/req_deplacement_1':
 				req_deplacement_1(req, res, query);
