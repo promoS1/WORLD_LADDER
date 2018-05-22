@@ -115,8 +115,8 @@ var trait = function (req, res, query) {
 
 
 // ENVOIE DE MA POSITION À L'AUTRE JOUEUR
-
 			partie[b].position_adversaire = partie[a].position;
+
 
 // PASSE LE JOUEUR ADVERSE EN TOUR ACTIF DANS LE JSON "{hote}.json"
 			partie[b].tour = "actif";

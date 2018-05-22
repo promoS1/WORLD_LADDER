@@ -31,13 +31,15 @@ var req_erreur = require('./js/req_erreur.js');
 var req_lancer = require('./js/req_lancer.js');
 var req_deplacer_pion = require('./js/req_deplacer_pion.js');
 var req_retour = require('./js/req_retour.js');
-var req_attente_tour = require('./js/req_attente_tour.js');
+var req_attente_tour = require('./js/req_attendre_tour.js');
 var req_check = require('./js/req_check.js');
 var req_reponse_joueur = require('./js/req_reponse_joueur.js');
 var req_page_deplacement = require('./js/req_page_deplacement.js');
 var req_passif = require('./js/req_passif.js');
 var req_dice = require ('./js/req_dice.js');
 var req_joueur_passif = require ('./js/req_joueur_passif.js');
+var req_deplacement_1 = require ('./js/req_deplacement_1.js');
+var req_deplacement_2 = require ('./js/req_deplacement_2.js');
 
 
 //-------------------------------------------------------------------------
@@ -109,7 +111,7 @@ var traite_requete = function (req, res) {
 			case '/req_retour':
 				req_retour(req, res, query);
 				break;
-			case '/req_attente_tour':
+			case '/req_attendre_tour':
 				req_attente_tour(req, res, query);
 				break;
 			case '/req_check':
@@ -126,6 +128,12 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_joueur_passif':
 				req_joueur_passif(req, res, query);
+				break;
+			case '/req_deplacement_1':
+				req_deplacement_1(req, res, query);
+				break;
+			case '/req_deplacement_2':
+				req_deplacement_2(req, res, query);
 				break;
 
 

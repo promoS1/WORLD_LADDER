@@ -41,6 +41,7 @@ var trait = function (req, res, query) {
 	contenu_fichier2 = fs.readFileSync("./json/partie_en_cours/" + hote + ".json", "utf-8");
 	partie = JSON.parse(contenu_fichier2);
 
+
 // LECTURE DU "jet_random" DANS LE JSON "{hote}.json"
 	for (i = 0; i < partie.length; i++) {
 		if (partie[i].compte === compte) {

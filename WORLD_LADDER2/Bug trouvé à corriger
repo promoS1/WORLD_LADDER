@@ -5,9 +5,19 @@
 
 
 
+
+_ Amélioration : Mettre des images de pas (chaussures) entre la position de pépart et la position final afin de montrer le chemin parcouru
+
+_ Changer les pions par des gifs de petit personnages ( Un llion, une souris etc ...)
+
+
+
+
+
 _ A coder : Les différentes options du mode Menu.
 
-_ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cases mystères (objets style 			monopoly, case prison, double tour, etc...)
+_ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cases mystères (objets style
+            monopoly, case prison, double tour, etc...)
 
 _ A coder : Rajout d'un bouton sur chaque page pour "Revenir au salon" ou "Revenir au menu" ou "Quitter le 				jeu"
 
