@@ -161,10 +161,10 @@ var trait = function (req, res, query) {
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'>";
 					}
-					if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_rouge.png'> ";
-					} else if (nb === partie[a].position_adversaire && partie[a].compte !== hote) {
+					if (nb === partie[b].position && partie[b].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
+					} else if (nb === partie[b].position && partie[b].compte !== hote) {
+						grille += "<img src = './html/pion_rouge.png'> ";
 					}						
 					grille += nb;	grille += "</td>";
 				}
