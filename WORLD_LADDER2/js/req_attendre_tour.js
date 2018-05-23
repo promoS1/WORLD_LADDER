@@ -35,9 +35,6 @@ var trait = function (req, res, query) {
 			a = i;
 		} else {
 			b = i;
-			if (partie[b].position === 100) {
-				partie[b].tour = "gagner";
-			}
 		}
 	}
 
@@ -189,13 +186,20 @@ var trait = function (req, res, query) {
 
 
 // VERIFIE SI C'EST AU TOUR DU JOUEUR DE JOUER OU NON
-	if (partie[b].tour === "gagner") {
-		page = fs.readFileSync('./html/res_perdu.html', 'utf-8');
-	} else if (partie[a].tour === "actif") {
+	if (partie[a].tour === "actif") {
 		page = fs.readFileSync('./html/res_joueur_actif.html', 'utf-8');
 	} else {
 		page = fs.readFileSync('./html/res_joueur_passif.html', 'utf-8');
 	}
+
+// VERIFIE SI LA PARTIE CONTINUE : QUELQU'UN A GAGNÉ ?
+		if (partie[a].victoire === "gagner" || partie[b].victoire === "perdu") {
+			page = fs.readFileSync('./html/res_gagner.html', 'utf-8');
+		}
+		if (partie[a].victoire === "perdu" || partie[b].victoire === "gagner") {
+			page = fs.readFileSync('./html/res_perdu.html', 'utf-8');
+		}		
+
 
 
 // ECRITURE DU NOUVEAU JSON "salon.json"

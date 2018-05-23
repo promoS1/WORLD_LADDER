@@ -54,17 +54,22 @@ var trait = function (req, res, query) {
 	for (i = 0; i < partie.length; i++) {
 		if (partie[i].compte === compte) {
 			a = i;
+			partie[a].victoire = "non";
 			partie[a].lancer = jet_random;
 			partie[a].position_temporaire = partie[i].position;
 			partie[a].position += jet_random;
-			if (partie[a].position > 100) {
+			if (partie[a].position >= 100) {
 				partie[a].position = 100;
+				partie[a].victoire = "gagner";
 			}
 			grille = partie[a].grille;
 		} else {
 			b = i;
+			partie[b].victoire = "personne";
 		}
 	}
+
+
 // ECRITURE: AJOUT DE "jet_random" DANS LE JSON "{hote}.json" 	
 	contenu_fichier2 = JSON.stringify(partie);
 	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier2, "UTF-8");
