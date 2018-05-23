@@ -58,7 +58,7 @@ var trait = function (req, res, query) {
 			partie[a].position_temporaire = partie[i].position;
 			partie[a].position += jet_random;
 			if (partie[a].position > 100) {
-				partie[a].position = 100
+				partie[a].position = 100;
 			}
 			grille = partie[a].grille;
 		} else {
@@ -104,18 +104,28 @@ var trait = function (req, res, query) {
 			} else if (nb === partie[b].position && partie[b].compte === hote) {
 				grille += "<img src = './html/pion_bleu.png'>";
 			}
+
+
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
-			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+				if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+					grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+				} else {
+					grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+				}
+			}
+			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
+				if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+					grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+				} else {
+					grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+				}
 			}
 			grille += nb; 		grille += "</td>";
 		}
-
 		grille += "</tr>\n";	grille += "<tr>";	
 		nb = nb - 11;
-
+		
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 			nb = nb + 1;
@@ -133,9 +143,18 @@ var trait = function (req, res, query) {
 			}
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/petit_pas_droite_bleu.png'>";
-			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+				if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+					grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+				} else {
+					grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+				}
+			}
+			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
+				if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+					grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+				} else {
+					grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+				}
 			}
 			grille += nb;	grille += "</td>";
 		}

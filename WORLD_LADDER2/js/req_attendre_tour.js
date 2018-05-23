@@ -35,6 +35,9 @@ var trait = function (req, res, query) {
 			a = i;
 		} else {
 			b = i;
+			if (partie[b].position === 100) {
+				partie[b].tour = "gagner";
+			}
 		}
 	}
 
@@ -64,42 +67,60 @@ var trait = function (req, res, query) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					}
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
-				if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
-					grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
-				} else if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
-					grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
-				}									
+					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
+						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+							grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+						} else {
+							grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+						}
+					}
+					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
+						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+							grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+						} else {
+							grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+						}	
+					}								
 					grille += nb; 		grille += "</td>";
-				}
-
-				grille += "</tr>\n";	grille += "<tr>";	
-				nb = nb - 11;
+					}
+					grille += "</tr>\n";	grille += "<tr>";	
+					nb = nb - 11;
 
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
-				for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
-					nb = nb + 1;
-					grille += "<td>";	
-					if (nb === partie[a].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
-					} else if (nb === partie[a].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_rouge.png'>";
-					}
-					if (nb === partie[b].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_rouge.png'> ";
-					} else if (nb === partie[b].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
-					}	
+					for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
+						nb = nb + 1;
+						grille += "<td>";
+//CHOISSIS LA BONNE COULEUR EN FONCTION DE SI LE JOUEUR EST L'HOTE DE LA PARTIE OU NON	
+						if (nb === partie[a].position && partie[a].compte === hote) {
+							grille += "<img src = './html/pion_bleu.png'> ";
+						} else if (nb === partie[a].position && partie[a].compte !== hote) {
+							grille += "<img src = './html/pion_rouge.png'>";
+						}
+						if (nb === partie[b].position && partie[a].compte === hote) {
+							grille += "<img src = './html/pion_rouge.png'> ";
+						} else if (nb === partie[b].position && partie[a].compte !== hote) {
+							grille += "<img src = './html/pion_bleu.png'> ";
+						}	
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
-				if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
-					grille += "<img src = './html/petit_pas_droite_bleu.png'>";
-				} else if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
-					grille += "<img src = './html/petit_pas_droite_rouge.png'>";
-				}										
+					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
+						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+							grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+						} else {
+							grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+						}
+					}
+					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
+						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
+							grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+						} else {
+							grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+						}
+					}										
 					grille += nb;	grille += "</td>";
 				}
 
-				grille += "</tr>\n";
-				nb = nb - 9	;
+					grille += "</tr>\n";
+					nb = nb - 9	;
 			}	
 
 	partie[b].position_temporaire = partie[b].position;
