@@ -39,6 +39,7 @@ var req_passif = require('./js/req_passif.js');
 var req_dice = require ('./js/req_dice.js');
 var req_deplacement_1 = require ('./js/req_deplacement_1.js');
 var req_deplacement_2 = require ('./js/req_deplacement_2.js');
+var req_accepter_portail = require ('./js/req_accepter_portail.js');
 
 
 //-------------------------------------------------------------------------
@@ -130,6 +131,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_deplacement_2':
 				req_deplacement_2(req, res, query);
+				break;
+			case '/req_accepter_portail':
+				req_accepter_portail(req, res, query);
 				break;
 
 

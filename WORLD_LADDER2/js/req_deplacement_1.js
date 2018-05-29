@@ -261,7 +261,15 @@ for (i = 0; i < partie.length; i++) {
 			if (partie[a].position === 5 || partie[a].position === 60 || partie[a].position === 69 || partie[a].position === 96) {
 				partie[a].prison++;
 			}
+
 			
+//				--------------------------------
+// SI PION SUR CASE SPÉCIALE, MODIFICATION DE LA POSITION : PORTAIL TÉLÉPORTATION
+			if (partie[a].position === 27 || partie[a].position === 44) {
+				page = fs.readFileSync("./html/res_portail.html", "utf-8");
+				partie[b].tour = "passif";
+				partie[a].tour = "actif";
+			}
 
 
 
