@@ -251,17 +251,23 @@ for (i = 0; i < partie.length; i++) {
 					
 		
 //				--------------------------------
+// SI PION SUR CASE SPÉCIALE, MODIFICATION DE LA POSITION : PRISON
+			if (partie[b].prison >= 1) {
+				partie[b].prison--;
+				partie[b].tour = "passif";
+				partie[a].tour = "actif";
+			}
 
+			if (partie[a].position === 5 || partie[a].position === 60 || partie[a].position === 69 || partie[a].position === 96) {
+				partie[a].prison++;
+			}
+			
 
 
 
 //SAUVEGARDE DE LA NOUVELLE GRILLE
 	contenu_fichier2 = JSON.stringify(partie);
 	fs.writeFileSync("./json/partie_en_cours/" + hote + ".json", contenu_fichier2, "utf-8");
-
-
-
-
 
 
 

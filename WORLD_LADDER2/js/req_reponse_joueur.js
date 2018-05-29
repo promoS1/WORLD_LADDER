@@ -60,9 +60,11 @@ if (liste_membres[a].etat === "joue") {
 		if (partie[i].compte === compte) {
 			a = i;
 			partie[a].position_temporaire = 1;
+			partie[a].prison = 0;
 		} else {
 			b = i;
 			partie[b].position_temporaire = 1;
+			partie[b].prison = 0;
 		}
 	}
 
