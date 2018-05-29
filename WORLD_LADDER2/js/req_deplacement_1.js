@@ -71,8 +71,16 @@ var trait = function (req, res, query) {
 	partie = JSON.parse(contenu_fichier2);
 
 
+// PASSE LE JOUEUR EN TOUR PASSIF DANS LE JSON "{hote}.json"
+			partie[a].tour = "passif";
+
+
+// PASSE LE JOUEUR ADVERSE EN TOUR ACTIF DANS LE JSON "{hote}.json"
+			partie[b].tour = "actif";
+
+
+
 // PREPARATION DES VARIABLES
-// BOUCLE "IF" QUI VA FAIRE AVANCER LE PION DE 1 CASE ET REFRESH LA PAGE HTML
 	nb = Number(101);
 
 
@@ -112,6 +120,8 @@ for (i = 0; i < partie.length; i++) {
 
 		grille += "</tr>\n";	grille += "<tr>";	
 		nb = nb - 11;
+
+
 
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
@@ -223,12 +233,26 @@ for (i = 0; i < partie.length; i++) {
 				test_condition = true;
 			}
 
-// PASSE LE JOUEUR EN TOUR PASSIF DANS LE JSON "{hote}.json"
-			partie[a].tour = "passif";
+// AFFICHAGE DE LA PAGE HTML EN FONCTION DE SI OUI OU NON LE PION A FINI D'AVANCER
+		if (test_condition === false) {
+			page = fs.readFileSync('./html/res_joueur_passif.html', 'utf-8');
+		} else {
+			page = fs.readFileSync('./html/res_position_intermediaire.html', 'utf-8');
+		}
 
 
-// PASSE LE JOUEUR ADVERSE EN TOUR ACTIF DANS LE JSON "{hote}.json"
-			partie[b].tour = "actif";
+//				--------------------------------
+// SI PION SUR CASE SPÉCIALE, MODIFICATION DE LA POSITION : DÉS --> REJOUER
+			if (partie[a].position === 10 || partie[a].position === 41 || partie[a].position === 48 || partie[a].position === 50 || partie[a].position === 56) {				
+				partie[a].tour = "actif";
+				partie[b].tour = "passif";
+				page = fs.readFileSync("./html/res_joueur_actif.html", "utf-8");
+			}
+					
+		
+//				--------------------------------
+
+
 
 
 //SAUVEGARDE DE LA NOUVELLE GRILLE
@@ -237,12 +261,7 @@ for (i = 0; i < partie.length; i++) {
 
 
 
-// AFFICHAGE DE LA PAGE HTML EN FONCTION DE SI OUI OU NON LE PION A FINI D'AVANCER
-		if (test_condition === false) {
-			page = fs.readFileSync('./html/res_joueur_passif.html', 'utf-8');
-		} else {
-			page = fs.readFileSync('./html/res_position_intermediaire.html', 'utf-8');
-		}
+
 
 
 
