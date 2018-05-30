@@ -95,7 +95,7 @@ var trait = function (req, res, query) {
 	partie = JSON.parse(contenu_fichier2);
 
 // CREATION DU PLATEAU DE JEU 
-	grille = '<table width = "90%" id="table1">';
+	grille = '<table id="table1">';
 	
 	nb = Number(101);
 	
@@ -107,10 +107,10 @@ var trait = function (req, res, query) {
 			nb = nb - 1;
 			grille += "<td>";		
 			if (nb === partie[0].position) {
-				grille += "<img src = './html/pion_bleu.png'> ";
+				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 			}
 			if (nb === partie[1].position) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
 			grille += nb; 		grille += "</td>";
 		}
@@ -123,10 +123,10 @@ var trait = function (req, res, query) {
 			nb = nb + 1;
 			grille += "<td>";	
 			if (nb === partie[0].position) {
-				grille += "<img src = './html/pion_bleu.png'> ";
+				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 			}
 			if (nb === partie[1].position) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
 			grille += nb;	grille += "</td>";
 		}
