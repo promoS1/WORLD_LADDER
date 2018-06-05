@@ -40,8 +40,8 @@ var trait = function (req, res, query) {
 	}
 
 
-//NOMBRE ALEATOIRE EN 1 ET 6
-	jet_random = Math.floor(Math.random() * 99) + 1;
+//NOMBRE ALEATOIRE EN 1 ET 99
+	jet_random = Math.floor(Math.random() * 45) + 1;
 	jet_random = Number (jet_random);
 
 
