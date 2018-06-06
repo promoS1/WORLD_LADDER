@@ -100,20 +100,20 @@ for (i = 0; i < partie.length; i++) {
 			nb = nb - 1;
 			grille += "<td>";		
 			if (nb === partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/pion_bleu.png'> ";
+				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 			} else if (nb === partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
 			if (nb === partie[b].position && partie[b].compte !== hote) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			} else if (nb === partie[b].position && partie[b].compte === hote) {
-				grille += "<img src = './html/pion_bleu.png'>";
+				grille += "<img src = './html/pion_bleu.png' class='pion>";
 			}
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+				grille += "<img src = './html/petit_pas_gauche_bleu.png' class='pion'>";
 			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+				grille += "<img src = './html/petit_pas_gauche_rouge.png' class='pion'>";
 			}
 			grille += nb; 		grille += "</td>";
 		}
@@ -128,20 +128,20 @@ for (i = 0; i < partie.length; i++) {
 			nb = nb + 1;
 			grille += "<td>";	
 			if (nb === partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/pion_bleu.png'> ";
+				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 			} else if (nb === partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
 			if (nb === partie[b].position && partie[b].compte !== hote) {
-				grille += "<img src = './html/pion_rouge.png'> ";
+				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			} else if (nb === partie[b].position && partie[b].compte === hote) {
-				grille += "<img src = './html/pion_bleu.png'>";
+				grille += "<img src = './html/pion_bleu.png' class='pion'>";
 			}
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 			if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte === hote) {
-				grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+				grille += "<img src = './html/petit_pas_droite_bleu.png' class=''pion'>";
 			} else if (nb >= partie[a].position_temporaire && nb < partie[a].position && partie[a].compte !== hote) {
-				grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+				grille += "<img src = './html/petit_pas_droite_rouge.png' class='pion'>";
 			}
 			grille += nb;	grille += "</td>";
 		}

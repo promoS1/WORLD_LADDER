@@ -85,8 +85,7 @@ var trait = function (req, res, query) {
 			} else if (partie[a].position > 100) {
 				partie[a].position = 100;
 			}
-
-//				--------------------------------
+		
 // SI PION SUR CASE SPÉCIALE, MODIFICATION DE LA POSITION : SERPENT
 			if (partie[a].position === 17) {
 				partie[a].position = 3;

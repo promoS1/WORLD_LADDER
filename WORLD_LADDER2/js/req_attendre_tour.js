@@ -54,28 +54,28 @@ var trait = function (req, res, query) {
 					nb = nb - 1;
 					grille += "<td>";		
 					if (nb === partie[a].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_rouge.png'>";
+						grille += "<img src = './html/pion_rouge.png'class='pion' >";
 					}
 					if (nb === partie[b].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_rouge.png'> ";
+						grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 					}
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
 						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
-							grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+							grille += "<img src = './html/petit_pas_haut_bleu.png' class='pion'>";
 						} else {
-							grille += "<img src = './html/petit_pas_gauche_bleu.png'>";
+							grille += "<img src = './html/petit_pas_gauche_bleu.png' class='pion'>";
 						}
 					}
 					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
 						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
-							grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+							grille += "<img src = './html/petit_pas_haut_rouge.png' class='pion'>";
 						} else {
-							grille += "<img src = './html/petit_pas_gauche_rouge.png'>";
+							grille += "<img src = './html/petit_pas_gauche_rouge.png' class='pion'>";
 						}	
 					}								
 					grille += nb; 		grille += "</td>";
@@ -89,28 +89,28 @@ var trait = function (req, res, query) {
 						grille += "<td>";
 //CHOISSIS LA BONNE COULEUR EN FONCTION DE SI LE JOUEUR EST L'HOTE DE LA PARTIE OU NON	
 						if (nb === partie[a].position && partie[a].compte === hote) {
-							grille += "<img src = './html/pion_bleu.png'> ";
+							grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 						} else if (nb === partie[a].position && partie[a].compte !== hote) {
-							grille += "<img src = './html/pion_rouge.png'>";
+							grille += "<img src = './html/pion_rouge.png' class='pion'>";
 						}
 						if (nb === partie[b].position && partie[a].compte === hote) {
-							grille += "<img src = './html/pion_rouge.png'> ";
+							grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 						} else if (nb === partie[b].position && partie[a].compte !== hote) {
-							grille += "<img src = './html/pion_bleu.png'> ";
+							grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 						}	
 // MET LES EMPREINTES DE PAS DERRIÈRES LES PIONS LORSQU'ILS AVANCENT
 					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte === hote) {
 						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
-							grille += "<img src = './html/petit_pas_haut_bleu.png'>";
+							grille += "<img src = './html/petit_pas_haut_bleu.png' class='pion'>";
 						} else {
-							grille += "<img src = './html/petit_pas_droite_bleu.png'>";
+							grille += "<img src = './html/petit_pas_droite_bleu.png' class='pion'>";
 						}
 					}
 					if (nb >= partie[b].position_temporaire && nb < partie[b].position && partie[b].compte !== hote) {
 						if (nb===10 || nb===20 || nb===30 || nb===40 || nb===50 || nb===60 || nb===70 || nb===80 || nb===90) {
-							grille += "<img src = './html/petit_pas_haut_rouge.png'>";
+							grille += "<img src = './html/petit_pas_haut_rouge.png' class='pion'>";
 						} else {
-							grille += "<img src = './html/petit_pas_droite_rouge.png'>";
+							grille += "<img src = './html/petit_pas_droite_rouge.png' class='pion'>";
 						}
 					}										
 					grille += nb;	grille += "</td>";
@@ -141,14 +141,14 @@ var trait = function (req, res, query) {
 					nb = nb - 1;
 					grille += "<td>";		
 					if (nb === partie[a].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_rouge.png'>";
+						grille += "<img src = './html/pion_rouge.png' class='pion'>";
 					}
 					if (nb === partie[b].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_rouge.png'> ";
+						grille += "<img src = './html/pion_rouge.png'> class='pion' ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png'> class='pion' ";
 					}						
 					grille += nb; 		grille += "</td>";
 				}
@@ -161,14 +161,14 @@ var trait = function (req, res, query) {
 					nb = nb + 1;
 					grille += "<td>";	
 					if (nb === partie[a].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png' class='pion'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_rouge.png'>";
+						grille += "<img src = './html/pion_rouge.png'class='pion' >";
 					}
 					if (nb === partie[b].position && partie[a].compte === hote) {
-						grille += "<img src = './html/pion_rouge.png'> ";
+						grille += "<img src = './html/pion_rouge.png'class='pion' > ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
-						grille += "<img src = './html/pion_bleu.png'> ";
+						grille += "<img src = './html/pion_bleu.png' class='pion' > ";
 					}	
 					grille += nb;	grille += "</td>";
 				}
