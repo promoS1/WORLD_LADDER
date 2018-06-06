@@ -9,14 +9,30 @@
 		<style type="text/css"> 
       		#table1
      		{
+				background-image: url("./html/plateau_de_jeu_modif.png");
+				background-repeat: no-repeat;
+				background-size: cover;
 				border-collapse: collapse;
+				max-height: 800px;
+				max-width: 800px;
+				display: block;
       		}
-     		 #table1 td
+
+	 		#table1 td
 			{
-				border: 1px solid black
+				<!-- border: 1px solid black; -->
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				height: 60px;
+				width: 90px;
+			}
+	
+			.pion {
+				width:	60%;
+				height: 60%;
 			}
 		</style>
-	</head>
 
 	<body background = "./html/img_bg2.jpg">
 
