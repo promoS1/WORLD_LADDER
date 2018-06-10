@@ -1,0 +1,16 @@
+
+
+							Bug trouvé ou àmélioration du code à faire :
+
+
+
+
+_ A coder : Les différentes options du mode Menu.
+
+_ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cases mystères (objets style
+            monopoly, case prison, double tour, etc...)
+
+_ A coder : Rajout d'un bouton sur chaque page pour "Revenir au salon" ou "Revenir au menu" ou "Quitter le 				jeu"
+
+_ A coder : Un moyen de savoir si le joueur adversaire est encore connecté en jeu.
+			Si non, faire revenir l'autre joueur sur le menu avec un petit message : "Adversaire déconnecté".

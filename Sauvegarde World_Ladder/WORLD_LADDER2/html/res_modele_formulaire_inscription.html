@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<title>WorldLadder</title>
+	</head>
+
+
+	<body background = "./html/img_bg.png">
+		<img src = "./html/icon.png"> <br>
+		<br>
+
+		<h2><u> Formulaire de création de compte : </u>   </h2> 
+
+		<form action= "/req_modele_confirmation_inscription" method = "get">
+			<label>Pseudo : </label> <br> <input type = "text" name = "compte" value = "{compte}"> <br> <br>
+			<label>Mot de passe : </label> <br> <input type = "password" name = "mdp" value = ""> <br><br>
+			Confirmation : <br> <input type = "password" name = "confirmation" value ""><br><br>
+			<input type = "submit" name = "creerCompte" value = "Créer compte">
+
+		</form> <br><br>
+
+
+		<form action = "/req_commencer" method = "get">
+			<input type = "submit" name = "retour" value = "Retour">
+		</form>
+
+	</body>
+</html>
