@@ -26,6 +26,7 @@ var trait = function (req, res, query) {
 	var ligne_1;
 	var ligne_2;
 	var nb;
+
 	
 // LECTURE DU JSON "salon.json"
 	contenu_fichier = fs.readFileSync("./json/salon.json", "utf-8");
@@ -39,16 +40,30 @@ var trait = function (req, res, query) {
 		}
 	}
 
-
-//NOMBRE ALEATOIRE EN 1 ET 6
-	jet_random = Math.floor(Math.random() * 6) + 1;
-	jet_random = Number (jet_random);
-
-
-
 // LECTURE DU JSON DE LA PARTIE EN COURS "{hote}.json"
 	contenu_fichier2 = fs.readFileSync("./json/partie_en_cours/" + hote + ".json", "utf-8");
 	partie = JSON.parse(contenu_fichier2);
+
+//NOMBRE ALEATOIRE EN 1 ET 6
+//	jet_random = Math.floor(Math.random() * 6) + 1;
+//	jet_random = Number (jet_random);
+
+			
+	if ( partie[0].demo === 1) { jet_random = 2}
+	if ( partie[0].demo === 2) { jet_random = 4}
+	if ( partie[0].demo === 3) { jet_random = 6}
+	if ( partie[0].demo === 4) { jet_random = 5}
+	if ( partie[0].demo === 5) { jet_random = 5}
+	if ( partie[0].demo === 6) { jet_random = 2}
+	if ( partie[0].demo === 7) { jet_random = 2}
+	if ( partie[0].demo === 7) { jet_random = 2}
+	partie[0].demo++	
+
+ 
+	
+
+
+
 
 
 // ECRITURE LA VALEUR DU JET DANS JSON "{hote}.json"	
@@ -57,7 +72,7 @@ var trait = function (req, res, query) {
 			a = i;
 			partie[a].victoire = "non";
 			partie[a].lancer = jet_random;
-			partie[a].position_temporaire = partie[i].position;
+			partie[a].position_temporaire = partie[a].position;
 			partie[a].position += jet_random;
 			if (partie[a].position >= 100) {
 				partie[a].position = 100;
@@ -88,7 +103,7 @@ var trait = function (req, res, query) {
 	partie = JSON.parse(contenu_fichier2);
 
 // CREATION DU PLATEAU DE JEU 
-	grille = '<table width = "90%" id="table1">';
+	grille = '<table id="table1">';
 	
 	nb = Number(101);
 	
@@ -127,7 +142,7 @@ var trait = function (req, res, query) {
 					grille += "<img src = './html/petit_pas_gauche_rouge.png' class='pion'>";
 				}
 			}
-			grille += nb; 		grille += "</td>";
+			grille += "</td>";
 		}
 		grille += "</tr>\n";	grille += "<tr>";	
 		nb = nb - 11;
@@ -162,7 +177,7 @@ var trait = function (req, res, query) {
 					grille += "<img src = './html/petit_pas_droite_rouge.png' class='pion'>";
 				}
 			}
-			grille += nb;	grille += "</td>";
+			grille += "</td>";
 		}
 
 		grille += "</tr>\n";

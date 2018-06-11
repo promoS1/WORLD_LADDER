@@ -82,17 +82,22 @@ if (liste_membres[a].etat === "joue") {
 				for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 					nb = nb - 1;
 					grille += "<td>";		
-					if (nb === partie[a].position && partie[a].compte === hote) {
+					if (nb === partie[a].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[a].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'>";
 					}
-					if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
+
+					if (nb === partie[a].position_adversaire && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_rouge.png'> ";
 					} else if (nb === partie[a].position_adversaire && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					}						
-					grille += nb; 		grille += "</td>";
+					grille += "</td>";
 				}
 
 				grille += "</tr>\n";	grille += "<tr>";	
@@ -101,18 +106,23 @@ if (liste_membres[a].etat === "joue") {
 // LIGNE HORIZONTALES : 81; 61; 41; 21; 1;
 				for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 					nb = nb + 1;
-					grille += "<td>";	
-					if (nb === partie[a].position && partie[a].compte === hote) {
+					grille += "<td>";
+					if (nb === partie[a].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";	
+					} else if (nb === partie[a].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'>";
 					}
-					if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
+
+					if (nb === partie[a].position_adversaire && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_rouge.png'> ";
 					} else if (nb === partie[a].position_adversaire && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					}						
-					grille += nb;	grille += "</td>";
+					grille += "</td>";
 				}
 
 				grille += "</tr>\n";

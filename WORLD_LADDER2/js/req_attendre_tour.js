@@ -159,9 +159,7 @@ var trait = function (req, res, query) {
 						grille += "<img src = './html/pion_rouge.png' class='pion'>";
 					}
 
-					if (nb === partie[b].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
-						grille += "<img src = './html/pion_double.png' class='pion' >";
-					} else if (nb === partie[b].position && partie[a].compte === hote) {
+					if (nb === partie[b].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png' class='pion' >";
@@ -184,9 +182,7 @@ var trait = function (req, res, query) {
 						grille += "<img src = './html/pion_rouge.png'class='pion' >";
 					}
 
-					if (nb === partie[b].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
-						grille += "<img src = './html/pion_double.png'> class='pion' ";
-					} else if (nb === partie[b].position && partie[a].compte === hote) {
+					if (nb === partie[b].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_rouge.png'class='pion' > ";
 					} else if (nb === partie[b].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png' class='pion' > ";

@@ -72,6 +72,7 @@ var trait = function (req, res, query) {
 	joueur.position_adversaire = Number (1);
 	joueur.adversaire = adversaire;	
 	joueur.grille = grille;
+	joueur.demo = 1;
 
 	joueur2 = {};
 	joueur2.compte = adversaire;
@@ -95,7 +96,7 @@ var trait = function (req, res, query) {
 	partie = JSON.parse(contenu_fichier2);
 
 // CREATION DU PLATEAU DE JEU 
-	grille = '<table id="table1">';
+	grille = '<table  style="text-align:center" id="table1">';
 	
 	nb = Number(101);
 	
@@ -105,14 +106,15 @@ var trait = function (req, res, query) {
 // LIGNE HORIZONTALES : 100; 80; 60; 40; 20; 
 		for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 			nb = nb - 1;
-			grille += "<td>";		
-			if (nb === partie[0].position) {
+			grille += "<td>";
+			if (nb === partie[0].position && partie[0].position === partie[1].position) {
+				grille += "<img src = './html/pion_double.png' class='pion'>"
+			}else if (nb === partie[0].position) {
 				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
-			}
-			if (nb === partie[1].position) {
+			}else if (nb === partie[1].position) {
 				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
-			grille += nb; 		grille += "</td>";
+		 	grille += "</td>";
 		}
 
 		grille += "</tr>\n";	grille += "<tr>";	
@@ -122,13 +124,14 @@ var trait = function (req, res, query) {
 		for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 			nb = nb + 1;
 			grille += "<td>";	
-			if (nb === partie[0].position) {
+			if (nb === partie[0].position && partie[0].position === partie[1].position) {
+				grille += "<img src = './html/pion_double.png' class='pion'>"
+			}else if (nb === partie[0].position) {
 				grille += "<img src = './html/pion_bleu.png' class='pion'> ";
-			}
-			if (nb === partie[1].position) {
+			}else if (nb === partie[1].position) {
 				grille += "<img src = './html/pion_rouge.png' class='pion'> ";
 			}
-			grille += nb;	grille += "</td>";
+			grille += "</td>";
 		}
 
 		grille += "</tr>\n";
