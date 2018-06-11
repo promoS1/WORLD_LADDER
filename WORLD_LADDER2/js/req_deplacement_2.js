@@ -62,7 +62,9 @@ var trait = function (req, res, query) {
 				img_dice = "<img src= './html/dice_5.gif'>";
 			} else if (jet_random === 6) {
 				img_dice = "<img src= './html/dice_6.gif'>";
-			}
+			} else {
+				img_dice = " ";
+			};
 
 
 
@@ -84,7 +86,7 @@ var trait = function (req, res, query) {
 				partie[a].position = 91;
 			} else if (partie[a].position > 100) {
 				partie[a].position = 100;
-			}
+			};
 		
 // SI PION SUR CASE SPÉCIALE, MODIFICATION DE LA POSITION : SERPENT
 			if (partie[a].position === 17) {
@@ -101,7 +103,7 @@ var trait = function (req, res, query) {
 				partie[a].position = 51;
 			} else if (partie[a].position === 97) {
 				partie[a].position = 79;
-			}
+			};
 
 //				--------------------------------
 // VERIFIE SI LE JOUEUR À GAGNÉ OU PERDU
@@ -109,7 +111,7 @@ var trait = function (req, res, query) {
 				partie[a].tour = "gagner";
 				partie[b].tour = "perdu";
 				victoire = true;
-			}
+			};
 
 
 
