@@ -124,7 +124,7 @@ var trait = function (req, res, query) {
 
 //-------------------------------------------------------------------------
 	// CREATION DU PLATEAU DE JEU 
-			grille = '<table width = "90%" id="table1">';
+			grille = '<table id="table1">';
 		
 			nb = Number(101);
 		
@@ -134,18 +134,23 @@ var trait = function (req, res, query) {
 // LIGNE HORIZONTALES : 100; 80; 60; 40; 20; 
 				for (ligne_1 = 0; ligne_1 < 10; ligne_1++) {
 					nb = nb - 1;
-					grille += "<td>";		
-					if (nb === partie[a].position && partie[a].compte === hote) {
+					grille += "<td>";
+					if (nb === partie[a].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";		
+					} else if (nb === partie[a].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'>";
 					}
-					if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
+
+					if (nb === partie[a].position_adversaire && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[a].position_adversaire && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_rouge.png'> ";
 					} else if (nb === partie[a].position_adversaire && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					}						
-					grille += nb; 		grille += "</td>";
+					grille += "</td>";
 				}
 
 				grille += "</tr>\n";	grille += "<tr>";	
@@ -155,17 +160,22 @@ var trait = function (req, res, query) {
 				for (ligne_2 = 0; ligne_2 < 10; ligne_2++) {
 					nb = nb + 1;
 					grille += "<td>";	
-					if (nb === partie[a].position && partie[a].compte === hote) {
+					if (nb === partie[a].position && partie[a].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[a].position && partie[a].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					} else if (nb === partie[a].position && partie[a].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'>";
 					}
-					if (nb === partie[b].position && partie[b].compte === hote) {
+
+					if (nb === partie[b].position && partie[b].compte === hote && partie[a].position === partie[b].position) {
+						grille += "<img src = './html/pion_double.png'> ";
+					} else if (nb === partie[b].position && partie[b].compte === hote) {
 						grille += "<img src = './html/pion_bleu.png'> ";
 					} else if (nb === partie[b].position && partie[b].compte !== hote) {
 						grille += "<img src = './html/pion_rouge.png'> ";
 					}						
-					grille += nb;	grille += "</td>";
+					grille += "</td>";
 				}
 
 				grille += "</tr>\n";

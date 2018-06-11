@@ -1,0 +1,33 @@
+
+#table1 {
+	background-image: url("../html/plateau_de_jeu_modif.png");
+	background-size: 1335px 910px;
+	background-repeat: no-repeat;	
+	border-collapse: collapse;				
+	max-width:1335px;
+	max-height:910px;
+	text-align : center;
+
+}
+
+td {
+	border: 1px ;
+	height:89px;
+	width:180px
+
+}
+	
+
+
+.pion {
+	width:45px;
+	height:45px;
+}
+
+.plateau {
+
+}
+.jouer{
+
+}
+	
