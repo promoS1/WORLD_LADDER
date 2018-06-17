@@ -1,36 +1,236 @@
 body {
-	background-image: url("../html/plateau_de_jeu_modif.png"), url("../html/img_bg2.png");
-	background-size: 1335px 910px, 1950px 1250px;
+	/*background-image: url("../html/plateau_de_jeu_modif.png"), url("../html/forest.png");*/
 	background-repeat: no-repeat;	
 }
+
+.img_plateau {
+/*	size: 1335px 910px, 1950px 1250px;*/
+	height: 910px;
+	width: 1335px;
+	margin-top: 95px;
+}
+
 #table1 {
-	
-
+	display: inline-block;
+	position: absolute;
 	border-collapse: collapse;				
-	max-width:1335px;
-	max-height:910px;
-	text-align : center;
-
+	max-width: 1335px;
+	max-height: 910px;
+	text-align: center;
+	table-layout: fixed;
+	overflow: hidden;
+	left: 6px;
+	top: 113px;
 }
 
 td {
-	border: 1px ;
-	height:89px;
-	width:180px
+	table-layout: fixed;
+	/*border: 1px solid black; */
+	height: 88px;
+	width: 135px
+}
 
+.gif{
+  position: absolute;
+	top: 690px;
+	right: -160px;
 }
 	
-
-
 .pion {
-	width:45px;
-	height:45px;
+	width: 75px;
+	height: 75px;
 }
 
 .plateau {
+	table-layout: fixed;
+	display : inline-block;
+}
+
+.serpent_branche {
+	position: absolute;
+	top: 150px;
+	right: -40px;
+	width: 300px;
+}
+
+.boutton {
+	z-index: 100;
+	display: inline-block;
+	position: absolute;
+	right: 210px;
+	top: 280px;
+	padding: 21px 55px;
+	margin: 3px 4px;
+	display: inline-block;
+	color: #ffffff;
+	font-size: 26px;
+	cursor: pointer;
+	background: #4095ff;
+	background: linear-gradient(top, #4095ff 0%, #277ce6 100%);
+	background: -moz-linear-gradient(top, #4095ff 0%, #277ce6 100%);
+	background: -webkit-linear-gradient(top, #4095ff 0%, #277ce6 100%);
+	background: -o-linear-gradient(top, #4095ff 0%, #277ce6 100%);
+	border: 1px solid #338bf6;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+	-moz-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+	-webkit-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+	-o-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.50);
 
 }
-.jouer{
-	float : left;
+
+.button:hover {
+	background: linear-gradient(top, #5aafff 0%, #4095ff 100%);
+	background: -moz-linear-gradient(top, #5aafff 0%, #4095ff 100%);
+	background: -webkit-linear-gradient(top, #5aafff 0%, #4095ff 100%);
+	background: -o-linear-gradient(top, #5aafff 0%, #4095ff 100%);
 }
+
+.button:active, .button:active{
+	opacity:0.8;
+}
+
+.bulle_bd {
+	position: absolute;
+	top: 360px;
+	right: 40px;
+	width: 540px;
+	height: 390px;
 	
+}
+
+.tortue {
+	display: inline-block;
+	position: absolute;
+	right: 315px;
+	top: 890px;
+}
+
+.bulle_petite {
+	position: absolute;
+	top: 660px;
+	right: 325px;
+	width: 150px;
+	height: 200px;
+}
+
+.bulle_grande {
+	position: absolute;
+	top: 120px;
+	right: 5px;
+	width: 550px;
+	height: 530px;
+}
+
+.dice {
+	display: inline-block;
+	position: absolute;
+	top: 770px;
+	right: 220px;
+	width: 12%
+}
+
+.phrase_1 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 180px;
+	right: 110px;
+	text-shadow: 3px 3px 4px;
+	font-size: 310%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 90px;	
+}
+
+.phrase_2 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 440px;
+	right: 125px;
+	text-shadow: 3px 3px 4px;
+	font-size: 290%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 90px;	
+}
+
+.phrase_dice_1 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 460px;
+	right: 161px;
+	text-shadow: 3px 3px 4px;
+	font-size: 200%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 60px;	
+	text-align: center;
+}
+
+.phrase_dice_23 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 440px;
+	right: 125px;
+	text-shadow: 3px 3px 4px;
+	font-size: 200%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 60px;	
+	text-align: center;
+}
+
+.phrase_dice_4 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 460px;
+	right: 161px;
+	text-shadow: 3px 3px 4px;
+	font-size: 200%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 60px;	
+	text-align: center;
+}
+
+.phrase_dice_5 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 460px;
+	right: 165px;
+	text-shadow: 3px 3px 4px;
+	font-size: 200%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 60px;	
+	text-align: center;
+}
+
+.phrase_dice_6 {
+	z-index: 10;
+	position: absolute;
+	display: inline-block;
+	top: 440px;
+	right: 110px;
+	text-shadow: 3px 3px 4px;
+	font-size: 200%;
+	font-weight: bold;
+	font-family : "Century Gothic", Verdana;
+	line-height: 60px;	
+	text-align: center;
+}
+
+
+
+
+

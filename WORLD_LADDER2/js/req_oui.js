@@ -95,7 +95,7 @@ var trait = function (req, res, query) {
 	partie = JSON.parse(contenu_fichier2);
 
 // CREATION DU PLATEAU DE JEU 
-	grille = '<table  style="text-align:center" id="table1">';
+	grille = '<table id="table1">';
 	
 	nb = Number(101);
 	

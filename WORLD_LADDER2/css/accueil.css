@@ -1,0 +1,51 @@
+body {
+  background-size: 1920px 1080px;
+  position: relative;
+  background-position: 300px 0px;
+
+}
+
+h2 {
+	display: inline-block;
+	position: relative;
+	left: -139px;
+  font-size: 65px;
+	
+}
+.block { 
+	display: inline-block;
+	position: relative;
+	top: 200px;
+	left: 150px;
+	font-family:'police';
+  color : #000000 ;
+	font-size : 25px;
+}
+
+.new {
+	display: inline-block;
+	position: relative;
+	left: -130px;
+	top: 90px;
+}
+
+.html_css {
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	
+}
+
+.node_js {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	
+	
+}
+
+
+
+

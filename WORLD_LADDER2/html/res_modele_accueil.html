@@ -4,19 +4,14 @@
 	<head>
 		<meta http-equiv = 'Content-Type' content = 'text/html'; charset = 'utf-8' />
 		<title>WorldLadder</title>
+		<link rel="stylesheet" href="./css/accueil.css">
 	
 	</head>
 
 
 	<body background = "./html/plan.jpg">
 	
-	
-		
-		<br>
-		<strong><h1><center><u>Accueil</u></center></h1></strong>	<br><br><br><br>
-
-
-
+<div class="block">
 <strong><h2>Connexion :</h2></strong>
 		<form action = "/req_identifier" method = "get">
 			<strong>Pseudo : </strong><br> <input type = "text" name = "compte" value = "{compte}" > <br><br>
@@ -25,16 +20,19 @@
 		</form>
 	<br>
 	<br>
-	Vous êtes nouveau ? Incrivez-vous dès maintenant !<br><br>
+<div class="new">
+	Vous êtes nouveau ? Incrivez-vous dès maintenant !
 
 
 		<form action = "/req_modele_formulaire_inscription" method ="get">
 			<input type = "submit" name = "action" value = "Creer un compte">
 		</form>
+</div>
 
+</div>
 
-
-
+		<img class="html_css" src="./html/html_css.png">
+		<img class="node_js" src="./html/node_js.png">
 
 	</body>
 

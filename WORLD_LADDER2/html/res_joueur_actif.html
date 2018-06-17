@@ -7,30 +7,27 @@
 		<title>WorldLadder</title>
 	</head>
 
+	
+	<body class="back" background = "./html/forest.png">	
+		<img class = "img_plateau" src="./html/plateau_de_jeu_modif.png">
 
-	<body background = "./html/img_bg2.jpg">
-
-		<div classe = "plateau" > 
 			{grille} <br> 
-		</div>
+		<p class="phrase_2"> C'est à votre <br> tour de jouer ! </p>
 
 
+		<img class="serpent_branche" src="./html/serpent_branche.png">
+		<img class="bulle_bd" src="./html/bulle_bd.png">
 
-		<div classe = "jouer">
 			<form action="/req_lancer" method="GET">
 				<input type = "hidden" name = "compte" value = "{compte}">
 				<input type = "hidden" name = "hote" value = "{hote}">
-				<button name="" value="">Lancer les dés</button>	<br><br>
-			</form> <br> 
-						C'est à votre tour de jouer ! <br>
+				<button class = "boutton" name="" value="">Lancer les dés</button>	<br><br>
+			</form> <br>
+
+		 
+		<div class="gif">
+			<img src = "./html/dice.gif" width=70% height=70%> 
 		</div>
-
-
-
-		<div classe = "de">
-			Lancer les dés : <img src = "./html/dice.gif">
-		</div>
-	
 
 	</body>
 

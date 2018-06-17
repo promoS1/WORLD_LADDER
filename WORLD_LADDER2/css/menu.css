@@ -1,0 +1,187 @@
+body {
+  background-image: url("../html/foret_menu2.png");
+  background-repeat: no-repeat;
+  background-size: 1920px 1080px;
+}
+
+h1 {
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 69px black;
+	letter-spacing: 14px;
+	font-size: 99px;
+	color: #8A4F04;
+	text-indent: 0px;
+	/*text-shadow: 3px 3px 99px;*/
+	top: 0px;	
+}
+
+.menu {
+	display: none;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 69px black;
+	letter-spacing: 14px;
+	font-size: 99px;
+	color: black;
+	text-indent: 0px;
+	/*text-shadow: 3px 3px 99px;*/
+	top: 0px;
+}
+
+.bienvenue {
+	position: relative;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	text-shadow: 3px 3px 69px black;
+	/*letter-spacing: 14px;*/
+	font-size: 39px;
+	font-weight: 700;
+	color: black;
+  text-indent: 10px;
+	text-shadow: 3px 3px 99px;
+	top: 20px;
+	left: -140px;
+}
+
+h4 {
+	position: relative;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	text-shadow: 3px 3px 69px black;
+	/*letter-spacing: 14px;*/
+	font-size: 23px;
+	font-weight: 700;
+	color: black;
+  text-indent: 450px;
+	text-shadow: 3px 3px 99px;
+	top: 30px;
+	left: -250px;
+}
+
+.choix {
+	position: relative;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	text-shadow: 3px 3px 69px black;
+	/*letter-spacing: 14px;*/
+	font-size: 23px;
+	font-weight: 700;
+	color: black;
+  text-indent: 450px;
+	text-shadow: 3px 3px 99px;
+	top: 47px;
+	left: -330px;
+}
+
+.regle {
+	display: none;
+	position: relative;
+	width: 53%;
+	/*text-transform: uppercase;*/
+	text-shadow: 3px 3px 69px black;
+	/*letter-spacing: 14px;*/
+	font-size: 23px;
+	font-weight: 700;
+	color: black;
+  text-indent: 450px;
+	text-shadow: 3px 3px 99px;
+	top: -70px;
+	left: 600px;
+	text-align: justify;
+}
+
+.container {
+	width: 500px; 
+	text-align: center; 
+	margin: auto;
+}
+
+
+.button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding-right: 30px;
+  padding-left: 70px;
+  position: relative;
+  background-color:rgb(41,127,184);
+  color:rgb(255,255,255);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  
+  
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+-ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ff123852,Positive=true)";zoom:1;
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ff123852,Positive=true);
+
+  -moz-box-shadow:0px 2px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow:0px 2px 2px rgba(0,0,0,0.2);
+  box-shadow:0px 2px 2px rgba(0,0,0,0.2);
+  -ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#33000000,Positive=true)";
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#33000000,Positive=true);
+}
+
+.button span {
+  position: absolute;
+  left: 0;
+	top: -2px;
+  width: 50px;
+  background-color:rgba(0,0,0,0.5);
+  
+ -webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border-right: 1px solid  rgba(0,0,0,0.15);
+}
+
+.button:hover span, .button.active span {
+  background-color:rgb(0,102,26);
+  border-right: 1px solid  rgba(0,0,0,0.3);
+}
+
+.button:active {
+  margin-top: 2px;
+  margin-bottom: 13px;
+
+-moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5);
+-webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.5);
+box-shadow:0px 1px 0px rgba(255,255,255,0.5);
+-ms-filter:"progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccffffff,Positive=true)";
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccffffff,Positive=true);
+}
+
+.button.orange {
+  background: #FF7F00;
+}
+
+.button.purple {
+  background: #8e44ad;
+}
+
+.button.turquoise {
+  background: #1abc9c;
+}
+
+.button.red {
+  background: #e74c3c;
+}
+
+
+.container {
+	position: relative;
+	left: -60px;
+	top: 35px;
+}
+
+

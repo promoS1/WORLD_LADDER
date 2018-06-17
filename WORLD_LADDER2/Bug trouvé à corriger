@@ -13,4 +13,21 @@ _ A coder : Rajouts de différentes fonctionnalités sur le jeu, tel que les cas
 _ A coder : Rajout d'un bouton sur chaque page pour "Revenir au salon" ou "Revenir au menu" ou "Quitter le 				jeu"
 
 _ A coder : Un moyen de savoir si le joueur adversaire est encore connecté en jeu.
-			Si non, faire revenir l'autre joueur sur le menu avec un petit message : "Adversaire déconnecté".
+			Si non, faire revenir l'autre joueur sur le menu avec un petit message : "Adversaire déconnecté
+
+
+
+Probleme d'affichage lorsque le pion arrive sur la case 61
+.	.	.	.	.	.	.	.	.	.	.	.	.  case 22
+req deplacement 1 le pion rouge n'apparait pas
+après un double jet, le tableau devient incomplet, ne par rediriger vers joueur_actif
+
+Benji :
+
+couper l'image en deux : bulle_bd2
+couper l'image en 6 : Benji.png
+Mettre en transparent : snake1.gif
+Mettre en transparent : tortue.jpeg
+
+coupler l'image empreinte de pas et pion
+
