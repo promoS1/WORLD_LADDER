@@ -1,22 +1,23 @@
 body {
   background-size: 1920px 1080px;
   position: relative;
-  background-position: 300px 0px;
+  background-position: 0px 0px;
 
 }
 
 h2 {
 	display: inline-block;
 	position: relative;
-	left: -139px;
-  font-size: 65px;
+	left: -300px;
+	top: 20px;
+  font-size: 55px;
 	
 }
 .block { 
 	display: inline-block;
 	position: relative;
-	top: 200px;
-	left: 150px;
+	top: 279px;
+	left: 300px;
 	font-family:'police';
   color : #000000 ;
 	font-size : 25px;
@@ -25,15 +26,15 @@ h2 {
 .new {
 	display: inline-block;
 	position: relative;
-	left: -130px;
+	left: -270px;
 	top: 90px;
 }
 
 .html_css {
 	display: inline-block;
 	position: absolute;
-	left: 10px;
-	top: 10px;
+	left: 45px;
+	top: 40px;
 	
 }
 
@@ -41,10 +42,11 @@ h2 {
 	display: inline-block;
 	position: absolute;
 	right: 10px;
-	top: 0px;
+	bottom: -470px;
 	
 	
 }
+
 
 
 
