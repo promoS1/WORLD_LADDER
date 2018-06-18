@@ -63,7 +63,9 @@ var trait = function (req, res, query) {
 		img_dice = "<img class='dice' src= './html/dice_5.png'> <p class='phrase_dice_5'> Vous avez fait : 5 <br> Pas mal ! <br> Un joli lancé. </p>";
 	} else if (jet_random === 6) {
 		img_dice = "<img class='dice' src= './html/dice_6.png'> <p class='phrase_dice_6'> Vous avez fait : 6 <br> Wouah ! <br> C'est un lancé parfait ! </p>";
-	}
+	} else {
+		img_dice = "";
+	};
 
 
 

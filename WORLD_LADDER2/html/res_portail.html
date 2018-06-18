@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 		<title>WorldLadder</title>
-		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/style.css" type="text/css"/>
 	</head>
 
 		<body class="back" background = "./html/forest.png">
@@ -12,20 +12,24 @@
 
 		{grille} <br>
 
-<p>Vous êtes tombé sur un portail magique ! Celui-ci vous propose de vous téléporter aléatoirement sur le plateau de jeu. Souhaitez-vous l'activer et tester ainsi votre chance ?</p><br><br>
+<p class="Vous_etes">Vous êtes tombé sur un portail magique !</p>
+<p class="Celui_ci"> Celui-ci vous propose de vous téléporter aléatoirement sur le plateau de jeu.</p>
+<p class="souhaitez_vous"> Souhaitez-vous l'activer et tester ainsi votre chance ?</p><br><br>
 
 		<form action = "/req_accepter_portail?compte={compte}&hote={hote}" method ="get">
 			<input type = "hidden" name = "hote" value = "{hote}">
 			<input type = "hidden" name = "compte" value = "{compte}">
-			<input type = "submit" name = "accepter" value = "Oui ! Je souhaite utiliser la chance !">
+			<input class="button_oui" type = "submit" name = "accepter" value = "Oui ! Je souhaite utiliser la chance !">
 		</form><br>
 
 		<form action = "/req_deplacement_2?compte={compte}&hote={hote}" method ="get">
 			<input type = "hidden" name = "hote" value = "{hote}">
 			<input type = "hidden" name = "compte" value = "{compte}">
-			<input type = "submit" name = "refuser" value = "Non ! Je préfère rester prudent...">
+			<input class="button_non" type = "submit" name = "refuser" value = "Non ! Je préfère rester prudent...">
 		</form>
 
+		<img class="portail" src="./html/gate.gif">
+		<img class="petit_serpent" src="./html/images3.png">
 	</body>
 
 </html>
