@@ -103,6 +103,7 @@ h4 {
 .button {
   display: inline-block;
   height: 50px;
+	width: 370px;
   line-height: 50px;
   padding-right: 30px;
   padding-left: 70px;
@@ -183,5 +184,6 @@ filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ccfffff
 	left: -60px;
 	top: 35px;
 }
+
 
 

@@ -173,32 +173,26 @@ h3 {
 }
 */
 .bouton {
-	z-index: 100;
-	display: inline-block;
-	right: 210px;
-	top: 280px;
-	padding: 3px 7px;
-	margin: 3px 4px;
-	display: inline-block;
-	color: #ffffff;
-	font-size: 26px;
-	cursor: pointer;
-	background: red;
-	background: linear-gradient(top, red 0%, black 100%);
-	background: -moz-linear-gradient(top, red 0%, black 100%);
-	background: -webkit-linear-gradient(top, red 0%, black 100%);
-	background: -o-linear-gradient(top, red 0%, black 100%);
-	border: 1px solid #338bf6;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
-	box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-	-moz-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-	-webkit-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-	-o-box-shadow:3px 3px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.50);
+	 position:relative;
+        width:200px;
+        color:#FFF;
+        display:block;
+        text-decoration: none;
+        margin:0 auto;
+        border-radius:200px;
+        border:solid 1px #D94E3B;
+        background:#cb3b27;
+        text-align:center;
+        padding:20px 30px;
+        -webkit-transition: all 0.1s;
+        -moz-transition: all 0.1s;
+        transition: all 0.1s;
+        -webkit-box-shadow: 0px 9px 0px #84261a;
+        -moz-box-shadow: 0px 9px 0px #84261a;
+        box-shadow: 0px 9px 0px #84261a;
 
+	text-transform: uppercase;
+	text-shadow: 3px 3px 4px black;
 }
 
 .bouton:hover {
@@ -208,8 +202,16 @@ h3 {
 	background: -o-linear-gradient(top, #5aafff 0%, #4095ff 100%);
 }
 
-.bouton:active, .button:active{
-	opacity:0.8;
+ .bouton:active, .button:active{
+	opacity:0.7;
+}
+
+.bouton:active {
+	 -webkit-box-shadow: 0px 2px 0px #84261a;
+    -moz-box-shadow: 0px 2px 0px #84261a;
+    box-shadow: 0px 2px 0px #84261a;
+    position:relative;
+    top:7px;
 }
 
 .serpent {
@@ -260,6 +262,7 @@ h3 {
 .button:active, .button:active{
 	opacity:0.8;
 }
+
 
 
 
