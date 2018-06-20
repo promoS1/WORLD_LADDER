@@ -48,7 +48,7 @@ var trait = function (req, res, query) {
 	liste= "";
 	for (i = 0; i < liste_membres.length; i++) {
 		if (liste_membres[i].compte !== query.compte && liste_membres[i].etat === "connecté" && liste_membres[i].libre === "oui") {
-			liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input class='bouton' type='submit' name='adversaire' value='"+ liste_membres[i].compte +"'></form>";
+			liste += "<form action = 'req_defie' method='GET'><input type = 'hidden' name='compte' value='"+ query.compte +"'><input class='bouton' type='submit' name='adversaire' value='"+ liste_membres[i].compte +"'></form><br>";
 		}	
 	}		
 

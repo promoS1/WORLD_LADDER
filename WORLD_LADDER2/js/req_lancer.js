@@ -41,9 +41,9 @@ var trait = function (req, res, query) {
 
 
 //NOMBRE ALEATOIRE EN 1 ET 6
-	//jet_random = Math.floor(Math.random() * 6) + 1;
-	//jet_random = Number (jet_random);
-	jet_random = 26;
+	jet_random = Math.floor(Math.random() * 6) + 1;
+	jet_random = Number (jet_random);
+
 
 
 
