@@ -25,6 +25,7 @@ var req_non = require('./js/req_non.js');
 var req_oui = require('./js/req_oui.js');
 var req_perdu = require('./js/req_perdu.js');
 var req_reponse_defie = require('./js/req_reponse_defie.js');
+var req_verifier_defie = require('./js/req_verifier_defie.js');
 var req_page_conditions = require('./js/req_page_conditions.js');
 var req_statique = require('./js/req_statique.js');
 var req_erreur = require('./js/req_erreur.js');
@@ -94,6 +95,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_perdu':
 				req_perdu(req, res, query);
+				break;
+			case '/req_verifier_defie':
+				req_verifier_defie(req, res, query);
 				break;
 			case '/req_reponse_defie':
 				req_reponse_defie(req, res, query);

@@ -4,7 +4,7 @@
 	<head>
 		<title>Salon</title>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-		<!-- <meta http-equiv="refresh" content="3; url=/req_reponse_defie?compte={compte}"> -->
+		<!--<meta http-equiv="refresh" content="3; url=/req_reponse_defie?compte={compte}">--> 
 		<link rel="stylesheet" href="./css/salon.css">
 	</head>
 
@@ -39,16 +39,32 @@
 			<p class="but"> <u>But du jeu :</u> Arrive le premier sur la case 100 pour gagner !</p>	
 			<p class="deroulement"><u>Déroulement :</u> Par courtoisie, le joueur qui est défié prend la main. </p>
 
-		<ul class="points">
-			<li>Si le pion arrive sur le bas d’une échelle, on monte dans la case où il y a le haut de 			l’échelle.</li><br>
-			<li>Si le pion arrive sur la queue du serpent, on descend dans la case où il y a la tête du 				serpent.</li><br>
-			<li>Si le pion arrive sur une case normale, on ne bouge pas.</li><br>
-			<br>
-		</ul>
-	</div>
-	<img class="serpent" src="./html/serpent_2.gif">
+			<ul class="points">
+				<li>Si le pion arrive sur le bas d’une échelle, on monte dans la case où il y a le haut de 			l’échelle.</li><br>
+				<li>Si le pion arrive sur la queue du serpent, on descend dans la case où il y a la tête du 				serpent.</li><br>
+				<li>Si le pion arrive sur une case normale, on ne bouge pas.</li><br>
+				<br>
+			</ul>
+		</div>
+		<img class="serpent" src="./html/serpent_2.gif">
 
-</body>
+		<script>
+			const intervalNumber = setInterval(function () {
+				fetch("http://localhost:5000/req_verifier_defie?compte={compte}")
+					.then(function (response) { return response.json(); })
+					.then(function (json) {
+						console.log(json);
+						if (json.adversaire_trouve === true) {
+							window.location = "http://localhost:5000/req_reponse_defie?compte={compte}";
+							clearInterval(intervalNumber);
+						} else {
+							document.querySelector(".joueurs").innerHTML = json.html;
+						}
+					});
+			}, 3000);
+		</script>
+
+	</body>
 
 </html>
 
